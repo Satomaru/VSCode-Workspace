@@ -16,6 +16,8 @@ Chrome で実行できる HTML です。
 前述の blackbox.html を、
 [VisiOS](https://beta-japan.com/) App として
 実行できるようにしたものです。
+ファイルを VisiOS App としてインポートする方法は分かりませんので、
+VisiOS App を新規作成して、コードをコピー&ペーストしてください。
 
 ## バージョン
 
