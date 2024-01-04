@@ -9,7 +9,7 @@
 ### blackbox.html
 
 Chrome で実行できる HTML です。
-[sQuery](https://squery.vercel.app/) を CDN で利用しています。
+[sQuery.js](https://squery.vercel.app/) を CDN で利用しています。
 
 ### blackbox.app
 
