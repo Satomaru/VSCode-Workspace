@@ -1,0 +1,989 @@
+<!--
+	App window size:
+		width:  600
+		height: 510
+-->
+
+<style>
+    body {
+        overflow: hidden;
+        font-size: 14px;
+        background-color: #fff;
+        color: #000;
+    }
+
+    article {
+        width: 560px;
+        position: relative;
+        margin: 16px;
+    }
+
+    main {
+        display: flex;
+        gap: 16px;
+    }
+
+    main aside {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    dialog {
+        width: 320px;
+        height: 64px;
+        position: fixed;
+        inset: 0;
+        margin: auto;
+        border: 1px solid #000;
+        border-radius: 4px;
+        padding: 8px;
+    }
+
+    dialog > div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    dialog form[method="dialog"] {
+        flex-grow: 1;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        text-align: right;
+    }
+
+    svg.sprite {
+        display: none;
+    }
+
+    #help {
+        position: absolute;
+        border: 1px solid #888;
+        border-radius: 4px;
+        padding: 8px;
+        background-color: #fff;
+        font-size: 12px;
+    }
+
+    #help[open] {
+        width: 500px;
+    }
+
+    #help summary {
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #help p {
+        margin-top: 1em;
+    }
+
+    #help em {
+        font-weight: bold;
+        font-style: normal;
+        color: #f00;
+    }
+
+    #box {
+        empty-cells: show;
+        border-spacing: 0;
+        background-color: #eee;
+        user-select: none;
+    }
+
+    #box td {
+        box-sizing: content-box;
+        border: 2px solid transparent;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 0;
+    }
+
+    #box svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    #box .box-rader {
+        border-color: #eef #aaf #aaf #eef;
+        background-color: #ccf;
+    }
+
+    #box .box-outer {
+        border-color: #ddd #fff #fff #ddd;
+    }
+
+    .box-closed #box .box-inner {
+        border-color: #eee #aaa #aaa #eee;
+        background-color: #ccc;
+    }
+
+    .box-closed #box .box-inner.box-turned {
+        border-color: #ccc #888 #888 #ccc;
+        background-color: #aaa;
+    }
+
+    .box-closed #box .box-inner .box-hidden {
+        visibility: hidden;
+    }
+
+    .box-closed #box .box-rader,
+    .box-closed #box .box-inner {
+        cursor: pointer;
+    }
+
+    .box-opened #box .box-inner {
+        border-color: #aac #668 #668 #aac;
+        background-color: #88a;
+    }
+
+    .box-opened #box .box-hidden {
+        visibility: visible;
+    }
+
+    #info {
+        flex-grow: 1;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    #info label {
+        display: inline-block;
+        width: 60px;
+        font-weight: bold;
+    }
+
+    #info label::after {
+        content: ":";
+    }
+
+    #info span {
+        display: inline-block;
+        width: 32px;
+        text-align: right;
+    }
+
+    #buttons {
+        flex-grow: 0;
+        padding: 0 8px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        text-align: right;
+    }
+
+    .box-closed #reset {
+        display: none;
+    }
+
+    .box-opened #open {
+        display: none;
+    }
+</style>
+
+<article>
+    <details id="help">
+        <summary>Help</summary>
+
+        <p>
+            上下左右にある<em>レーダー照射マス</em>をクリックして、<br />
+            <em>ブラックボックス</em>の中に埋められている
+            <span class="gems">*</span>
+            つの<em>宝石</em>を当てましょう。<br />
+            レーダーが宝石に接触した際の挙動は、プレイしながら理解してください。<br />
+            レーダーは
+            <span class="rader">*</span> 回まで照射できます。<br />
+        </p>
+
+        <p>
+            レーダー照射の結果から、宝石が埋まっていると思われるマスを推測して、<br />
+            合計
+            <span class="gems">*</span>
+            箇所を<em>マーキング</em>してください。<br />
+            マーキングしたら<em>Openボタン</em>でブラックボックスを開けましょう。<br />
+            ひとつでもはずしたら、スコアは 0 点です。<br />
+            全部当てたら、レーダーの照射数が少ないほどスコアがもらえます。<br />
+        </p>
+
+        <p>
+            <em>シフトキー</em>を押しながらブラックボックスを
+            クリック・ドラッグすることで、<br />
+            ブラックボックスのマスを暗くすることができます。<br />
+            ゲーム上の意味はありませんが、考察に役立ててください。<br />
+        </p>
+    </details>
+
+    <main class="box-closed">
+        <table id="box">
+            <tbody></tbody>
+        </table>
+
+        <aside>
+            <ul id="info">
+                <li><label>Gems</label><span class="gems">*</span></li>
+                <li><label>Radar</label><span class="rader">*</span></li>
+                <li><label>Score</label><span id="score">-</span></li>
+            </ul>
+
+            <div id="buttons">
+                <div>
+                    <button id="reset" type="button">Reset</button>
+                    <button id="open" type="button">Open</button>
+                </div>
+            </div>
+        </aside>
+
+        <dialog>
+            <div>
+                <div id="message"></div>
+                <form method="dialog">
+                    <div>
+                        <button type="submit">OK</button>
+                    </div>
+                </form>
+            </div>
+        </dialog>
+    </main>
+</article>
+
+<svg class="sprite">
+    <defs>
+        <style>
+            .beam circle {
+                fill: #8f8;
+            }
+
+            .beam circle.border {
+                fill: #080;
+                filter: blur(1px);
+            }
+
+            .beam path {
+                fill: none;
+                stroke: #8f8;
+                stroke-width: 3;
+            }
+
+            .beam path.border {
+                stroke: #080;
+                stroke-width: 5;
+                filter: blur(1px);
+            }
+
+            #gem path {
+                fill: #dd7;
+            }
+
+            #gem path.highlight {
+                fill: #ff8;
+            }
+
+            #gem path.shadow {
+                fill: #bb6;
+            }
+
+            #mark path {
+                fill: none;
+                stroke: #f00;
+                stroke-width: 2;
+            }
+        </style>
+
+        <symbol id="beam-u" viewBox="0 0 32 32" class="beam">
+            <path class="border" d="M 16,0 v 16" />
+            <circle class="border" cx="16" cy="16" r="5" />
+            <path d="M 16,0 v 16" />
+            <circle cx="16" cy="16" r="4" />
+        </symbol>
+
+        <symbol id="beam-r" viewBox="0 0 32 32" class="beam">
+            <path class="border" d="M 32,16 h -16" />
+            <circle class="border" cx="16" cy="16" r="5" />
+            <path d="M 32,16 h -16" />
+            <circle cx="16" cy="16" r="4" />
+        </symbol>
+
+        <symbol id="beam-d" viewBox="0 0 32 32" class="beam">
+            <path class="border" d="M 16,32 v -16" />
+            <circle class="border" cx="16" cy="16" r="5" />
+            <path d="M 16,32 v -16" />
+            <circle cx="16" cy="16" r="4" />
+        </symbol>
+
+        <symbol id="beam-l" viewBox="0 0 32 32" class="beam">
+            <path class="border" d="M 0,16 h 16" />
+            <circle class="border" cx="16" cy="16" r="5" />
+            <path d="M 0,16 h 16" />
+            <circle cx="16" cy="16" r="4" />
+        </symbol>
+
+        <symbol id="beam-ur" viewBox="0 0 32 32" class="beam">
+            <path class="border" d="M 16,0 v 16 h 16" />
+            <path d="M 16,0 v 16 h 16" />
+        </symbol>
+
+        <symbol id="beam-rd" viewBox="0 0 32 32" class="beam">
+            <path class="border" d="M 32,16 h -16 v 16" />
+            <path d="M 32,16 h -16 v 16" />
+        </symbol>
+
+        <symbol id="beam-dl" viewBox="0 0 32 32" class="beam">
+            <path class="border" d="M 0,16 h 16 v 16" />
+            <path d="M 0,16 h 16 v 16" />
+        </symbol>
+
+        <symbol id="beam-ul" viewBox="0 0 32 32" class="beam">
+            <path class="border" d="M 16,0 v 16 h -16" />
+            <path d="M 16,0 v 16 h -16" />
+        </symbol>
+
+        <symbol id="beam-ud" viewBox="0 0 32 32" class="beam">
+            <path class="border" d="M 16,0 v 32" />
+            <path d="M 16,0 v 32" />
+        </symbol>
+
+        <symbol id="beam-rl" viewBox="0 0 32 32" class="beam">
+            <path class="border" d="M 0,16 h 32" />
+            <path d="M 0,16 h 32" />
+        </symbol>
+
+        <symbol id="beam-cr" viewBox="0 0 32 32" class="beam">
+            <path class="border" d="M 16,0 v 32 M 0,16 h 32" />
+            <path d="M 16,0 v 32 M 0,16 h 32" />
+        </symbol>
+
+        <symbol id="gem" viewBox="0 0 32 32">
+            <path d="M 16,0 L 0,16 L 16,32 L 32,16" />
+            <path class="highlight" d="M 0,16 h 16 v -16" />
+            <path class="shadow" d="M 16,32 v -16 h 16" />
+        </symbol>
+
+        <symbol id="mark" viewBox="0 0 32 32">
+            <path d="M 2,10 v -8 h 8" />
+            <path d="M 2,22 v 8 h 8" />
+            <path d="M 30,10 v -8 h -8" />
+            <path d="M 30,22 v 8 h -8" />
+            <path d="M 10,16 h 12" />
+            <path d="M 16,10 v 12" />
+        </symbol>
+    </defs>
+</svg>
+
+<script>
+    const Box = {
+        size: 12,
+        gems: 4,
+        rader: 10,
+        raderIndex: 0,
+        turned: null,
+    };
+
+    const Status = {
+        NONE: 0b00000,
+        BEAM_U: 0b00001,
+        BEAM_R: 0b00010,
+        BEAM_UR: 0b00011,
+        BEAM_D: 0b00100,
+        BEAM_UD: 0b00101,
+        BEAM_RD: 0b00110,
+        BEAM_L: 0b01000,
+        BEAM_UL: 0b01001,
+        BEAM_RL: 0b01010,
+        BEAM_DL: 0b01100,
+        BEAM_CR: 0b01111,
+        GEM: 0b10000,
+    };
+
+    sq("#help span.gems").text(Box.gems);
+    sq("#help span.rader").text(Box.rader);
+    sq("#info span.gems").text(Box.gems);
+    sq("#info span.rader").text(Box.rader);
+
+    sq("body").on("mouseup", function () {
+        if (sq("main").hasClass("box-opened")) {
+            return;
+        }
+
+        Box.turned = null;
+    });
+
+    sq("body").on("mousemove", function () {
+        if (sq("main").hasClass("box-opened")) {
+            return;
+        }
+
+        Box.turned = null;
+    });
+
+    sq("#reset").on("click", function () {
+        sq("main").prop("className", "box-closed");
+        initialize();
+    });
+
+    sq("#open").on("click", function () {
+        if (sq('[box-mark="true"]').length !== Box.gems) {
+            sq("dialog #message").text(`宝石は ${Box.gems} 箇所です。`);
+            sq("dialog").get(0).showModal();
+            return;
+        }
+
+        sq("main").prop("className", "box-opened");
+        const hits = sq('[box-status="16"][box-mark="true"]').length;
+
+        const score =
+            hits === Box.gems
+                ? (Box.gems + Box.rader - Box.raderIndex) * 10
+                : 0;
+
+        sq("#score").text(score);
+    });
+
+    class Cell {
+        td;
+
+        constructor(td) {
+            this.td = td;
+        }
+
+        getX() {
+            return parseInt(this.td.attr("box-x"));
+        }
+
+        getY() {
+            return parseInt(this.td.parent().attr("box-y"));
+        }
+
+        toPosition() {
+            return new Position(this.getX(), this.getY());
+        }
+    }
+
+    class Target extends Cell {
+        constructor(td) {
+            super(td);
+        }
+
+        getStatus() {
+            return parseInt(this.td.attr("box-status"));
+        }
+
+        setStatus(status) {
+            this.td.attr("box-status", status);
+            return this;
+        }
+
+        mergeStatus(status) {
+            return this.setStatus(this.getStatus() | status);
+        }
+
+        isMarked() {
+            return this.td.attr("box-mark") === "true";
+        }
+
+        setMark(mark) {
+            this.td.attr("box-mark", mark);
+            return this;
+        }
+
+        toggleMark() {
+            return this.setMark(!this.isMarked());
+        }
+
+        existsGem() {
+            return this.getStatus() === Status.GEM;
+        }
+
+        show() {
+            this.td.children().remove();
+            const use = [];
+
+            switch (this.getStatus()) {
+                case Status.BEAM_U:
+                    use.push('<use href="#beam-u" class="box-hidden" />');
+                    break;
+
+                case Status.BEAM_R:
+                    use.push('<use href="#beam-r" class="box-hidden" />');
+                    break;
+
+                case Status.BEAM_UR:
+                    use.push('<use href="#beam-ur" class="box-hidden" />');
+                    break;
+
+                case Status.BEAM_D:
+                    use.push('<use href="#beam-d" class="box-hidden" />');
+                    break;
+
+                case Status.BEAM_UD:
+                    use.push('<use href="#beam-ud" class="box-hidden" />');
+                    break;
+
+                case Status.BEAM_RD:
+                    use.push('<use href="#beam-rd" class="box-hidden" />');
+                    break;
+
+                case Status.BEAM_L:
+                    use.push('<use href="#beam-l" class="box-hidden" />');
+                    break;
+
+                case Status.BEAM_UL:
+                    use.push('<use href="#beam-ul" class="box-hidden" />');
+                    break;
+
+                case Status.BEAM_RL:
+                    use.push('<use href="#beam-rl" class="box-hidden" />');
+                    break;
+
+                case Status.BEAM_DL:
+                    use.push('<use href="#beam-dl" class="box-hidden" />');
+                    break;
+
+                case Status.BEAM_CR:
+                    use.push('<use href="#beam-cr" class="box-hidden" />');
+                    break;
+
+                case Status.GEM:
+                    use.push('<use href="#gem" class="box-hidden" />');
+                    break;
+            }
+
+            if (this.isMarked()) {
+                use.push('<use href="#mark" />');
+            }
+
+            if (use.length > 0) {
+                const svg = this.td.append("<svg></svg>").children().last();
+
+                use.forEach((item) => svg.append(item));
+            }
+
+            return this;
+        }
+    }
+
+    class Rader extends Cell {
+        constructor(td) {
+            super(td);
+        }
+
+        getDir() {
+            return parseInt(this.td.attr("box-rader-dir"));
+        }
+
+        getIndex() {
+            return parseInt(this.td.attr("box-rader-index"));
+        }
+
+        setIndex(index) {
+            this.td.attr("box-rader-index", index);
+            return this;
+        }
+
+        shoot(index) {
+            this.setIndex(index);
+            return this.toPosition().toCursor(this.getDir());
+        }
+
+        show() {
+            const index = this.getIndex();
+
+            if (index !== 0) {
+                this.td.text(index);
+            }
+
+            return this;
+        }
+    }
+
+    class Position {
+        x;
+        y;
+
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        isBorder() {
+            return (
+                this.x === 0 ||
+                this.x === Box.size - 1 ||
+                this.y === 0 ||
+                this.y === Box.size - 1
+            );
+        }
+
+        getTd() {
+            return sq("#box tbody")
+                .find(`tr[box-y="${this.y}"] td[box-x="${this.x}"]`)
+                .first();
+        }
+
+        toCursor(dir) {
+            return new Cursor(this.x, this.y, dir);
+        }
+    }
+
+    class Cursor extends Position {
+        dir;
+
+        constructor(x, y, dir) {
+            super(x, y);
+            this.dir = dir;
+        }
+
+        forward() {
+            switch (this.dir) {
+                case 0:
+                    --this.y;
+                    break;
+
+                case 1:
+                    ++this.x;
+                    break;
+
+                case 2:
+                    ++this.y;
+                    break;
+
+                case 3:
+                    --this.x;
+                    break;
+
+                default:
+                    throw `illegal dir: ${this.dir}`;
+            }
+
+            return new Target(this.getTd());
+        }
+
+        turnRight() {
+            this.dir = (this.dir + 1) % 4;
+            return this;
+        }
+
+        turnLeft() {
+            this.dir = (this.dir + 3) % 4;
+            return this;
+        }
+
+        lookFrontRight() {
+            switch (this.dir) {
+                case 0:
+                    return new Position(this.x + 1, this.y - 1);
+
+                case 1:
+                    return new Position(this.x + 1, this.y + 1);
+
+                case 2:
+                    return new Position(this.x - 1, this.y + 1);
+
+                case 3:
+                    return new Position(this.x - 1, this.y - 1);
+
+                default:
+                    throw `illegal dir: ${dir}`;
+            }
+        }
+
+        lookFrontCenter() {
+            switch (this.dir) {
+                case 0:
+                    return new Position(this.x, this.y - 1);
+
+                case 1:
+                    return new Position(this.x + 1, this.y);
+
+                case 2:
+                    return new Position(this.x, this.y + 1);
+
+                case 3:
+                    return new Position(this.x - 1, this.y);
+
+                default:
+                    throw `illegal dir: ${dir}`;
+            }
+        }
+
+        lookFrontLeft() {
+            switch (this.dir) {
+                case 0:
+                    return new Position(this.x - 1, this.y - 1);
+
+                case 1:
+                    return new Position(this.x + 1, this.y - 1);
+
+                case 2:
+                    return new Position(this.x + 1, this.y + 1);
+
+                case 3:
+                    return new Position(this.x - 1, this.y + 1);
+
+                default:
+                    throw `illegal dir: ${dir}`;
+            }
+        }
+    }
+
+    function buryGem() {
+        for (let count = 0; count < Box.gems; count++) {
+            let target;
+
+            do {
+                const x = Math.floor(Math.random() * (Box.size - 4)) + 2;
+
+                const y = Math.floor(Math.random() * (Box.size - 4)) + 2;
+
+                const position = new Position(x, y);
+                target = new Target(position.getTd());
+            } while (target.getStatus() !== Status.NONE);
+
+            target.setStatus(Status.GEM);
+        }
+    }
+
+    function showBox() {
+        sq("#box .box-target").each(function () {
+            new Target(sq(this)).show();
+        });
+
+        sq("#box .box-rader").each(function () {
+            new Rader(sq(this)).show();
+        });
+    }
+
+    function onClickRader() {
+        if (sq("main").hasClass("box-opened")) {
+            return;
+        }
+
+        if (Box.raderIndex === Box.rader) {
+            return;
+        }
+
+        const rader = new Rader(sq(this));
+
+        if (rader.getIndex() !== 0) {
+            return;
+        }
+
+        const cursor = rader.shoot(++Box.raderIndex);
+        let target = cursor.forward();
+        let entered = false;
+        let disappeared = false;
+
+        do {
+            switch (cursor.dir) {
+                case 0:
+                    target.mergeStatus(Status.BEAM_D);
+                    break;
+
+                case 1:
+                    target.mergeStatus(Status.BEAM_L);
+                    break;
+
+                case 2:
+                    target.mergeStatus(Status.BEAM_U);
+                    break;
+
+                case 3:
+                    target.mergeStatus(Status.BEAM_R);
+                    break;
+
+                default:
+                    throw `illegal dir: ${cursor.dir}`;
+            }
+
+            const frontLeft = new Target(
+                cursor.lookFrontLeft().getTd()
+            ).existsGem();
+
+            const frontCenter = new Target(
+                cursor.lookFrontCenter().getTd()
+            ).existsGem();
+
+            const frontRight = new Target(
+                cursor.lookFrontRight().getTd()
+            ).existsGem();
+
+            if (
+                frontCenter ||
+                (frontLeft && frontRight) ||
+                (!entered && (frontLeft || frontRight))
+            ) {
+                disappeared = true;
+                break;
+            } else if (frontRight) {
+                cursor.turnLeft();
+            } else if (frontLeft) {
+                cursor.turnRight();
+            }
+
+            switch (cursor.dir) {
+                case 0:
+                    target.mergeStatus(Status.BEAM_U);
+                    break;
+
+                case 1:
+                    target.mergeStatus(Status.BEAM_R);
+                    break;
+
+                case 2:
+                    target.mergeStatus(Status.BEAM_D);
+                    break;
+
+                case 3:
+                    target.mergeStatus(Status.BEAM_L);
+                    break;
+
+                default:
+                    throw `illegal dir: ${cursor.dir}`;
+            }
+
+            target = cursor.forward();
+            entered = true;
+        } while (!cursor.isBorder());
+
+        if (!disappeared) {
+            new Rader(cursor.getTd()).setIndex(Box.raderIndex);
+        }
+
+        showBox();
+    }
+
+    function onClickInner(event) {
+        if (sq("main").hasClass("box-opened")) {
+            return;
+        }
+
+        if (!event.shiftKey) {
+            new Target(sq(this)).toggleMark();
+            showBox();
+        }
+    }
+
+    function onMousedownInner(event) {
+        if (sq("main").hasClass("box-opened")) {
+            return;
+        }
+
+        if (event.shiftKey && event.button === 0) {
+            Box.turned = sq(this)
+                .toggleClass("box-turned")
+                .hasClass("box-turned");
+        }
+    }
+
+    function onMousemoveInner(event) {
+        if (sq("main").hasClass("box-opened")) {
+            return;
+        }
+
+        event.stopPropagation();
+
+        if (event.shiftKey && Box.turned !== null) {
+            if (Box.turned) {
+                sq(this).addClass("box-turned");
+            } else {
+                sq(this).removeClass("box-turned");
+            }
+        }
+    }
+
+    function initialize() {
+        Box.raderIndex = 0;
+        Box.turned = null;
+        sq("#score").text("-");
+        const tbody = sq("#box tbody");
+        tbody.children().remove();
+
+        for (let y = 0; y < Box.size; y++) {
+            tbody.append(`<tr box-y="${y}"></tr>`);
+        }
+
+        const trs = tbody.children();
+        const tr1st = trs.first();
+
+        for (let x = 0; x < Box.size; x++) {
+            tr1st.append(`<td box-x="${x}"></td>`);
+        }
+
+        trs.slice(1).html(tr1st.html());
+
+        tr1st
+            .children()
+            .slice(2, -2)
+            .addClass("box-rader")
+            .attr("box-rader-dir", 2)
+            .attr("box-rader-index", 0);
+
+        trs.last()
+            .children()
+            .slice(2, -2)
+            .addClass("box-rader")
+            .attr("box-rader-dir", 0)
+            .attr("box-rader-index", 0);
+
+        trs.eq(1)
+            .children()
+            .slice(2, -2)
+            .addClass("box-target")
+            .addClass("box-outer")
+            .attr("box-status", 0);
+
+        trs.eq(-2)
+            .children()
+            .slice(2, -2)
+            .addClass("box-target")
+            .addClass("box-outer")
+            .attr("box-status", 0);
+
+        trs.slice(2, -2).each(function () {
+            const tds = sq(this).children();
+
+            tds.first()
+                .addClass("box-rader")
+                .attr("box-rader-dir", 1)
+                .attr("box-rader-index", 0);
+
+            tds.last()
+                .addClass("box-rader")
+                .attr("box-rader-dir", 3)
+                .attr("box-rader-index", 0);
+
+            tds.eq(1)
+                .addClass("box-target")
+                .addClass("box-outer")
+                .attr("box-status", 0);
+
+            tds.eq(-2)
+                .addClass("box-target")
+                .addClass("box-outer")
+                .attr("box-status", 0);
+
+            tds.slice(2, -2)
+                .addClass("box-target")
+                .addClass("box-inner")
+                .attr("box-status", 0)
+                .attr("box-mark", false);
+        });
+
+        sq(".box-rader").on("click", onClickRader);
+
+        sq(".box-inner")
+            .on("click", onClickInner)
+            .on("mousedown", onMousedownInner)
+            .on("mousemove", onMousemoveInner);
+
+        buryGem();
+        showBox();
+    }
+
+    initialize();
+</script>
