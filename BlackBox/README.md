@@ -23,4 +23,4 @@ VisiOS App を新規作成して、コードをコピー&ペーストしてく�
 
 ### v0
 
-試作です。一応、遊べます。
+試作です。一応、[遊べます](https://satomaru.github.io/VSCode-Workspace/BlackBox/v0/blackbox.html)。
