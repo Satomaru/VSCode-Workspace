@@ -206,12 +206,18 @@
 
                 if (window.screen.height > window.screen.width) {
                     // viewport.attr("content", "width=600");
-                    viewport.setAttribute("content", "width=600");
+                    viewport.setAttribute(
+                        "content",
+                        "width=600,initial-scale=1"
+                    );
                 } else {
                     const zoom = 600 / window.screen.height;
                     const width = Math.ceil(window.screen.width * zoom);
                     // viewport.attr("content", `width=${width}`);
-                    viewport.setAttribute("content", `width=${width}`);
+                    viewport.setAttribute(
+                        "content",
+                        `width=${width},initial-scale=1`
+                    );
                 }
             }
 
