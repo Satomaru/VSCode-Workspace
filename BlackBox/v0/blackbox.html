@@ -199,19 +199,25 @@
 
         <script>
             function adjustViewport() {
-                const viewport = sq('meta[name="viewport"]');
+                // const viewport = sq('meta[name="viewport"]');
+                const viewport = document.querySelector(
+                    'meta[name="viewport"]'
+                );
 
                 if (window.screen.height > window.screen.width) {
-                    viewport.attr("content", "width=600");
+                    // viewport.attr("content", "width=600");
+                    viewport.setAttribute("content", "width=600");
                 } else {
                     const zoom = 600 / window.screen.height;
                     const width = Math.ceil(window.screen.width * zoom);
-                    viewport.attr("content", `width=${width}`);
+                    // viewport.attr("content", `width=${width}`);
+                    viewport.setAttribute("content", `width=${width}`);
                 }
             }
 
             adjustViewport();
-            sq(window).on("orientationchange resize", adjustViewport);
+            // sq(window).on("orientationchange resize", adjustViewport);
+            window.addEventListener("orientationchange", adjustViewport);
         </script>
     </head>
 
