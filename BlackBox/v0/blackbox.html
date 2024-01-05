@@ -174,6 +174,8 @@
             }
 
             #options {
+                margin: 0;
+                padding: 0 0 0 20px;
                 flex-grow: 1;
             }
 
@@ -194,11 +196,28 @@
                 display: none;
             }
         </style>
+
+        <script>
+            function adjustViewport() {
+                const viewport = sq('meta[name="viewport"]');
+
+                if (window.screen.height > window.screen.width) {
+                    viewport.attr("content", "width=600");
+                } else {
+                    const zoom = 600 / window.screen.height;
+                    const width = Math.ceil(window.screen.width * zoom);
+                    viewport.attr("content", `width=${width}`);
+                }
+            }
+
+            adjustViewport();
+            sq(window).on("orientationchange resize", adjustViewport);
+        </script>
     </head>
 
     <body>
         <header>
-            <h1>BlackBox v0.1.0</h1>
+            <h1>BlackBox v0.1.1</h1>
         </header>
 
         <article>
@@ -211,15 +230,13 @@
                     <span class="gems">*</span>
                     つの<em>宝石</em>を当てましょう。
                     レーダーが宝石に接触した際の挙動は、
-                    プレイしながら理解してください。
-                    レーダーは
+                    プレイしながら理解してください。 レーダーは
                     <span class="rader">*</span> 回まで照射できます。
                 </p>
 
                 <p>
                     レーダー照射の結果から、
-                    宝石が埋まっていると思われるマスを推測して、
-                    合計
+                    宝石が埋まっていると思われるマスを推測して、 合計
                     <span class="gems">*</span>
                     箇所を<em>マーキング</em>してください。
                     マーキングしたら<em>Openボタン</em>で
@@ -249,22 +266,31 @@
                         <li><label>Score</label><span id="score">-</span></li>
                     </ul>
 
-                    <div id="options">
-                        <label>
-                            <input
-                                type="radio"
-                                name="tapInner"
-                                value="target"
-                                checked
-                            />
-                            Target</label
-                        ><br />
-
-                        <label>
-                            <input type="radio" name="tapInner" value="dark" />
-                            Dark</label
-                        ><br />
-                    </div>
+                    <ol id="options">
+                        <li>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="tapInner"
+                                    value="target"
+                                    accesskey="1"
+                                    checked
+                                />
+                                Target</label
+                            >
+                        </li>
+                        <li>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="tapInner"
+                                    value="dark"
+                                    accesskey="2"
+                                />
+                                Dark</label
+                            >
+                        </li>
+                    </ol>
 
                     <div id="buttons">
                         <div>
@@ -910,8 +936,7 @@
                 const tapInner = sq('input[name="tapInner"]:checked').val();
 
                 if (tapInner === "target") {
-                    new Target(sq(this)).toggleMark();
-                    showBox();
+                    new Target(sq(this)).toggleMark().show();
                 }
             }
 
