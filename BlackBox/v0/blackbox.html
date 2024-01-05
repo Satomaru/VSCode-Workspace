@@ -1039,8 +1039,7 @@
 
                 sq(".box-inner")
                     .on("click", onClickInner)
-                    .on("pointerdown", onPointerInner)
-                    .on("pointerenter", onPointerInner);
+                    .on("pointerdown pointerenter", onPointerInner);
 
                 buryGem();
                 showBox();
