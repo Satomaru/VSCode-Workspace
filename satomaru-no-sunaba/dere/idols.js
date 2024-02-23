@@ -96,17 +96,17 @@ const skills = [
 	},
 	{
 		center: "トリコロール・ボイス",
-		speciality: "コンボボーナス",
+		speciality: "COMBOボーナス",
 		fitten: "Vo",
 	},
 	{
 		center: "トリコロール・ステップ",
-		speciality: "コンボボーナス",
+		speciality: "COMBOボーナス",
 		fitten: "Da",
 	},
 	{
 		center: "トリコロール・メイク",
-		speciality: "コンボボーナス",
+		speciality: "COMBOボーナス",
 		fitten: "Vi",
 	},
 	{
@@ -257,28 +257,28 @@ triggers.forEach((trigger) => {
 skills.forEach((skill, index) => {
 	const corresponds = idols.filter(
 		(idol) =>
-			idol.center === skill.center &&
+			(idol.center === skill.center || skill.center === "(任意)") &&
 			idol.speciality === skill.speciality &&
 			idol.fitten === skill.fitten
 	);
 
-	const spec =
-		`<td>${index + 1}</td>` +
-		`<td>${skill.center}</td>` +
-		`<td>${skill.speciality}</td>` +
-		`<td>${skill.fitten}</td>`;
+	if (corresponds.length > 0) {
+		const spec = `<td>${index + 1}</td><td>${skill.center}</td><td>${
+			skill.speciality
+		}</td><td>${skill.fitten}</td>`;
 
-	const mark = triggers
-		.map((trigger) => {
-			if (corresponds.some((idol) => idol.trigger === trigger)) {
-				return `<td>${trigger}</td>`;
-			} else {
-				return "<td></td>";
-			}
-		})
-		.join("");
+		const mark = triggers
+			.map((trigger) => {
+				if (corresponds.some((idol) => idol.trigger === trigger)) {
+					return `<td>${trigger}</td>`;
+				} else {
+					return "<td></td>";
+				}
+			})
+			.join("");
 
-	skillBody.append(`<tr>${spec}${mark}</tr>`);
+		skillBody.append(`<tr>${spec}${mark}</tr>`);
+	}
 });
 
 const idolList = sq("#idol-list");

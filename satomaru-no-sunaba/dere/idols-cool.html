@@ -3,19 +3,11 @@
 <html lang="ja">
 	<head>
 		<title>Cool Idols</title>
-		<link href="idols.css?varsion=20240223a" rel="stylesheet" />
+		<link href="idols.css?varsion=20240223b" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
 
 		<script>
 			const idols = [
-				{
-					name: "久川颯",
-					clothes: "メイク・ハー・スター",
-					center: "シンデレラウィッシュ",
-					speciality: "リフレイン",
-					fitten: "Da",
-					trigger: "7高",
-				},
 				{
 					name: "結城晴",
 					clothes: "秘密のブルーローズ",
@@ -23,6 +15,14 @@
 					speciality: "リフレイン",
 					fitten: "Vo",
 					trigger: "11高",
+				},
+				{
+					name: "久川颯",
+					clothes: "メイク・ハー・スター",
+					center: "シンデレラウィッシュ",
+					speciality: "リフレイン",
+					fitten: "Da",
+					trigger: "7高",
 				},
 				{
 					name: "森久保乃々",
@@ -49,14 +49,6 @@
 					trigger: "7高",
 				},
 				{
-					name: "橘ありす",
-					clothes: "ありすの物語",
-					center: "シンデレラチャーム",
-					speciality: "トリコロール・シナジー",
-					fitten: "Vi",
-					trigger: "7高",
-				},
-				{
 					name: "神谷奈緒",
 					clothes: "一陣の情熱",
 					center: "シンデレラチャーム",
@@ -65,11 +57,27 @@
 					trigger: "9高",
 				},
 				{
+					name: "橘ありす",
+					clothes: "ありすの物語",
+					center: "シンデレラチャーム",
+					speciality: "トリコロール・シナジー",
+					fitten: "Vi",
+					trigger: "7高",
+				},
+				{
 					name: "高垣楓",
 					clothes: "深淵なる月影",
 					center: "シンデレラブレス",
 					speciality: "シンデレラマジック",
 					fitten: "Vo",
+					trigger: "12中",
+				},
+				{
+					name: "神谷奈緒",
+					clothes: "ダンシング・イン・ザ・レイン",
+					center: "シンデレラブレス",
+					speciality: "シンデレラマジック",
+					fitten: "Da",
 					trigger: "12中",
 				},
 				{
@@ -88,6 +96,94 @@
 					fitten: "Vi",
 					trigger: "12中",
 				},
+				{
+					name: "北条加蓮",
+					clothes: "春霞の彼方",
+					center: "シンデレラブレス",
+					speciality: "シンデレラマジック",
+					fitten: "Vi",
+					trigger: "12中",
+				},
+				{
+					name: "渋谷凛",
+					clothes: "オーバー・マイセルフ",
+					center: "トリコロール・ボイス",
+					speciality: "COMBOボーナス",
+					fitten: "Vo",
+					trigger: "7高",
+				},
+				{
+					name: "塩見周子",
+					clothes: "うつつの華模様",
+					center: "トリコロール・ステップ",
+					speciality: "COMBOボーナス",
+					fitten: "Da",
+					trigger: "11高",
+				},
+				{
+					name: "北条加蓮",
+					clothes: "プロミネンス・プライド",
+					center: "レゾナンス・ステップ",
+					speciality: "ダンスモチーフ",
+					fitten: "Da",
+					trigger: "7高",
+				},
+				{
+					name: "荒木比奈",
+					clothes: "ソラ駆けるオモイ",
+					center: "レゾナンス・メイク",
+					speciality: "ビジュアルモチーフ",
+					fitten: "Vi",
+					trigger: "9高",
+				},
+				{
+					name: "森久保乃々",
+					clothes: "隠し味はロマンティック",
+					center: "クールボイス",
+					speciality: "オーバードライブ",
+					fitten: "Vi",
+					trigger: "9高",
+				},
+				{
+					name: "鷹富士茄子",
+					clothes: "うたかたマーメイド",
+					center: "クールステップ",
+					speciality: "オーバーロード",
+					fitten: "Da",
+					trigger: "4高",
+				},
+				{
+					name: "神谷奈緒",
+					clothes: "ふたりだけの夏空",
+					center: "クールメイク",
+					speciality: "オーバーロード",
+					fitten: "Vi",
+					trigger: "6高",
+				},
+				{
+					name: "二宮飛鳥",
+					clothes: "パレス・オブ・ファンタジア",
+					center: "クールメイク",
+					speciality: "オーバーロード",
+					fitten: "Vi",
+					trigger: "7高",
+				},
+				{
+					name: "多田李衣菜",
+					clothes: "放課後ロックスター",
+					center: "クールブリリアンス",
+					speciality: "オーバーロード",
+					fitten: "Vi",
+					trigger: "6高",
+				},
+				{
+					name: "三船美優",
+					clothes: "サンセットヴィーナス",
+					center: "クールブリリアンス",
+					speciality: "オーバーロード",
+					fitten: "Vi",
+					trigger: "7高",
+				},
 			];
 		</script>
 	</head>
@@ -95,7 +191,7 @@
 	<body class="cool">
 		<button type="button" id="display-switch">表示切替</button>
 
-		<div id="display" class="skills">
+		<div id="display" class="idols">
 			<table id="skill-matrix">
 				<thead>
 					<tr>
@@ -124,6 +220,6 @@
 			</table>
 		</div>
 
-		<script src="idols.js?varsion=20240223a"></script>
+		<script src="idols.js?varsion=20240223b"></script>
 	</body>
 </html>
