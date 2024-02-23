@@ -1,0 +1,59 @@
+* {
+	font-family: sans-serif;
+	font-size: 9pt;
+}
+
+table {
+	border: 2px solid #ccc;
+	border-collapse: collapse;
+	empty-cells: show;
+}
+
+table th,
+table td {
+	border: 1px solid #ccc;
+	padding: 2px;
+	font-weight: normal;
+}
+
+table thead th {
+	color: #fff;
+}
+
+table tbody tr:nth-child(odd) {
+	background-color: #fff;
+}
+
+table td:first-child {
+	text-align: right;
+}
+
+/** For Cute */
+
+table.cute thead tr {
+	background-color: #c4c;
+}
+
+table.cute tbody tr:nth-child(even) {
+	background-color: #fdf;
+}
+
+/* For Cool */
+
+table.cool thead tr {
+	background-color: #44c;
+}
+
+table.cool tbody tr:nth-child(even) {
+	background-color: #ddf;
+}
+
+/* For Passion */
+
+table.passion thead tr {
+	background-color: #884;
+}
+
+table.passion tbody tr:nth-child(even) {
+	background-color: #ffd;
+}
