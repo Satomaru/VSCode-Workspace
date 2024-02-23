@@ -3,7 +3,7 @@
 <html lang="ja">
 	<head>
 		<title>Passion Idols</title>
-		<link href="idols.css" rel="stylesheet" />
+		<link href="idols.css?20240223a" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
 
 		<script>
@@ -11,19 +11,38 @@
 		</script>
 	</head>
 
-	<body>
-		<table id="skill-matrix" class="passion">
-			<thead>
-				<tr>
-					<th>No.</th>
-					<th>センター効果</th>
-					<th>特技</th>
-					<th>適性</th>
-				</tr>
-			</thead>
-			<tbody></tbody>
-		</table>
+	<body class="passion">
+		<button type="button" id="display-switch">表示切替</button>
 
-		<script src="idols.js"></script>
+		<div id="display" class="skills">
+			<table id="skill-matrix">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>センター効果</th>
+						<th>特技</th>
+						<th>適性</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+
+			<table id="idol-list">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>名前</th>
+						<th>衣装</th>
+						<th>センター効果</th>
+						<th>特技</th>
+						<th>適性</th>
+						<th>発動</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+
+		<script src="idols.js?20240223a"></script>
 	</body>
 </html>

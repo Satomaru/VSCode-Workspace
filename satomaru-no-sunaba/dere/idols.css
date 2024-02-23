@@ -1,27 +1,9 @@
-* {
+button,
+td,
+th {
 	font-family: sans-serif;
 	font-size: 9pt;
 	color: #444;
-}
-
-#display {
-	margin-top: 4px;
-}
-
-#display.skills #skill-matrix {
-	display: table;
-}
-
-#display.idols #skill-matrix {
-	display: none;
-}
-
-#display.skills #idol-list {
-	display: none;
-}
-
-#display.idols #idol-list {
-	display: table;
 }
 
 table {
@@ -47,6 +29,26 @@ tbody tr {
 
 td:first-child {
 	text-align: right;
+}
+
+#display {
+	margin-top: 4px;
+}
+
+#display.skills #skill-matrix {
+	display: table;
+}
+
+#display.idols #skill-matrix {
+	display: none;
+}
+
+#display.skills #idol-list {
+	display: none;
+}
+
+#display.idols #idol-list {
+	display: table;
 }
 
 /** For Cute */
