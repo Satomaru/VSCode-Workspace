@@ -3,7 +3,7 @@
 <html lang="ja">
 	<head>
 		<title>Cool Idols</title>
-		<link href="idols.css" rel="stylesheet" />
+		<link href="idols.css?20240223a" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
 
 		<script>
@@ -40,23 +40,90 @@
 					fitten: "Da",
 					trigger: "11高",
 				},
+				{
+					name: "藤原肇",
+					clothes: "天に歌、地に器",
+					center: "シンデレラエール",
+					speciality: "トリコロール・シンフォニー",
+					fitten: "Vi",
+					trigger: "7高",
+				},
+				{
+					name: "橘ありす",
+					clothes: "ありすの物語",
+					center: "シンデレラチャーム",
+					speciality: "トリコロール・シナジー",
+					fitten: "Vi",
+					trigger: "7高",
+				},
+				{
+					name: "神谷奈緒",
+					clothes: "一陣の情熱",
+					center: "シンデレラチャーム",
+					speciality: "トリコロール・シナジー",
+					fitten: "Vo",
+					trigger: "9高",
+				},
+				{
+					name: "高垣楓",
+					clothes: "深淵なる月影",
+					center: "シンデレラブレス",
+					speciality: "シンデレラマジック",
+					fitten: "Vo",
+					trigger: "12中",
+				},
+				{
+					name: "鷺沢文香",
+					clothes: "ブックマーク・メモリー",
+					center: "シンデレラブレス",
+					speciality: "シンデレラマジック",
+					fitten: "Da",
+					trigger: "12中",
+				},
+				{
+					name: "アナスタシア",
+					clothes: "永遠に枯れぬ花",
+					center: "シンデレラブレス",
+					speciality: "シンデレラマジック",
+					fitten: "Vi",
+					trigger: "12中",
+				},
 			];
 		</script>
 	</head>
 
-	<body>
-		<table id="skill-matrix" class="cool">
-			<thead>
-				<tr>
-					<th>No.</th>
-					<th>センター効果</th>
-					<th>特技</th>
-					<th>適性</th>
-				</tr>
-			</thead>
-			<tbody></tbody>
-		</table>
+	<body class="cool">
+		<button type="button" id="display-switch">表示切替</button>
 
-		<script src="idols.js"></script>
+		<div id="display" class="skills">
+			<table id="skill-matrix">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>センター効果</th>
+						<th>特技</th>
+						<th>適性</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+
+			<table id="idol-list">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>名前</th>
+						<th>衣装</th>
+						<th>センター効果</th>
+						<th>特技</th>
+						<th>適性</th>
+						<th>発動</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+
+		<script src="idols.js?20240223a"></script>
 	</body>
 </html>

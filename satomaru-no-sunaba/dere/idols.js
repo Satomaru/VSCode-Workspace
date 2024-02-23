@@ -1,12 +1,8 @@
-const table = sq("#skill-matrix");
-const thead = table.find("thead tr");
-const tbody = table.find("tbody");
-
 const idolsType = {
 	cute: "キュート",
 	cool: "クール",
 	passion: "パッション",
-}[table.prop("className")];
+}[sq("body").prop("className")];
 
 const triggers = [
 	"4高",
@@ -250,8 +246,12 @@ const skills = [
 	},
 ];
 
+const skillMatrix = sq("#skill-matrix");
+const skillHead = skillMatrix.find("thead tr");
+const skillBody = skillMatrix.find("tbody");
+
 triggers.forEach((trigger) => {
-	thead.append(`<th>${trigger}</th>`);
+	skillHead.append(`<th>${trigger}</th>`);
 });
 
 skills.forEach((skill, index) => {
@@ -278,5 +278,23 @@ skills.forEach((skill, index) => {
 		})
 		.join("");
 
-	tbody.append(`<tr>${spec}${mark}</tr>`);
+	skillBody.append(`<tr>${spec}${mark}</tr>`);
+});
+
+const idolList = sq("#idol-list");
+const idolBody = idolList.find("tbody");
+
+idols.forEach((idol, index) => {
+	idolBody.append(
+		`<tr><td>${index + 1}</td><td>${idol.name}</td><td>${idol.clothes}</td><td>${
+			idol.center
+		}</td><td>${idol.speciality}</td><td>${idol.fitten}</td><td>${idol.trigger}</td></tr>`
+	);
+});
+
+sq("#display-switch").on("click", () => {
+	const display = sq("#display");
+	let displayClass = display.prop("className");
+	displayClass = displayClass === "skills" ? "idols" : "skills";
+	display.prop("className", displayClass);
 });

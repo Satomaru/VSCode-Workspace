@@ -1,6 +1,27 @@
 * {
 	font-family: sans-serif;
 	font-size: 9pt;
+	color: #444;
+}
+
+#display {
+	margin-top: 4px;
+}
+
+#display.skills #skill-matrix {
+	display: table;
+}
+
+#display.idols #skill-matrix {
+	display: none;
+}
+
+#display.skills #idol-list {
+	display: none;
+}
+
+#display.idols #idol-list {
+	display: table;
 }
 
 table {
@@ -9,51 +30,51 @@ table {
 	empty-cells: show;
 }
 
-table th,
-table td {
+th,
+td {
 	border: 1px solid #ccc;
 	padding: 2px;
 	font-weight: normal;
 }
 
-table thead th {
+thead th {
 	color: #fff;
 }
 
-table tbody tr:nth-child(odd) {
+tbody tr {
 	background-color: #fff;
 }
 
-table td:first-child {
+td:first-child {
 	text-align: right;
 }
 
 /** For Cute */
 
-table.cute thead tr {
+.cute thead tr {
 	background-color: #c4c;
 }
 
-table.cute tbody tr:nth-child(even) {
+.cute tbody tr:nth-child(even) {
 	background-color: #fdf;
 }
 
 /* For Cool */
 
-table.cool thead tr {
+.cool thead tr {
 	background-color: #44c;
 }
 
-table.cool tbody tr:nth-child(even) {
+.cool tbody tr:nth-child(even) {
 	background-color: #ddf;
 }
 
 /* For Passion */
 
-table.passion thead tr {
+.passion thead tr {
 	background-color: #884;
 }
 
-table.passion tbody tr:nth-child(even) {
+.passion tbody tr:nth-child(even) {
 	background-color: #ffd;
 }
