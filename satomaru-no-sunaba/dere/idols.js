@@ -82,17 +82,17 @@ const skills = [
 	{
 		center: "ドミナント・デュエット (V&S)",
 		speciality: "ドミナント・ハーモニー",
-		fitten: "VoDa",
+		fitten: "Vo Da",
 	},
 	{
 		center: "ドミナント・デュエット (S&M)",
 		speciality: "ドミナント・ハーモニー",
-		fitten: "DaVi",
+		fitten: "Da Vi",
 	},
 	{
 		center: "ドミナント・デュエット (M&V)",
 		speciality: "ドミナント・ハーモニー",
-		fitten: "ViVo",
+		fitten: "Vi Vo",
 	},
 	{
 		center: "トリコロール・ボイス",
@@ -187,17 +187,17 @@ const skills = [
 	{
 		center: idolsType + "デュエット (V&S)",
 		speciality: "ミューチャル",
-		fitten: "VoDa",
+		fitten: "Vo Da",
 	},
 	{
 		center: idolsType + "デュエット (S&M)",
 		speciality: "ミューチャル",
-		fitten: "DaVi",
+		fitten: "Da Vi",
 	},
 	{
 		center: idolsType + "デュエット (M&V)",
 		speciality: "ミューチャル",
-		fitten: "ViVo",
+		fitten: "Vi Vo",
 	},
 	{
 		center: idolsType + "プリンセス",
@@ -277,7 +277,7 @@ skills.forEach((skill, index) => {
 			})
 			.join("");
 
-		skillBody.append(`<tr>${spec}${mark}</tr>`);
+		skillBody.append(`<tr class="${skill.fitten}">${spec}${mark}</tr>`);
 	}
 });
 
@@ -286,15 +286,32 @@ const idolBody = idolList.find("tbody");
 
 idols.forEach((idol, index) => {
 	idolBody.append(
-		`<tr><td>${index + 1}</td><td>${idol.name}</td><td>${idol.clothes}</td><td>${
-			idol.center
-		}</td><td>${idol.speciality}</td><td>${idol.fitten}</td><td>${idol.trigger}</td></tr>`
+		`<tr class="${idol.fitten}"><td>${index + 1}</td><td>${idol.name}</td><td>${
+			idol.clothes
+		}</td><td>${idol.center}</td><td>${idol.speciality}</td><td>${idol.fitten}</td><td>${
+			idol.trigger
+		}</td></tr>`
 	);
 });
 
-sq("#display-switch").on("click", () => {
+sq("#display-switch").on("click", function () {
 	const display = sq("#display");
-	let displayClass = display.prop("className");
-	displayClass = displayClass === "skills" ? "idols" : "skills";
-	display.prop("className", displayClass);
+
+	if (display.hasClass("skills")) {
+		display.removeClass("skills");
+		display.addClass("idols");
+	} else {
+		display.removeClass("idols");
+		display.addClass("skills");
+	}
+});
+
+sq('input[name="fitten"]').on("change", function () {
+	const display = sq("#display");
+
+	if (this.checked) {
+		display.addClass(this.value);
+	} else {
+		display.removeClass(this.value);
+	}
 });
