@@ -18,6 +18,22 @@ const triggers = [
 	"13高",
 ];
 
+const highlights = {
+	キュートアンサンブル: "hl1 hl2 hl3",
+	クールアンサンブル: "hl1 hl2 hl3",
+	パッションアンサンブル: "hl1 hl2 hl3",
+	オルタネイト: "hl1",
+	ミューチャル: "hl1",
+	オーバードライブ: "hl1 hl2",
+	オーバーロード: "hl1 hl2",
+	シンデレラマジック: "hl2 hl3",
+	リフレイン: "hl2 hl3",
+	COMBOボーナス: "hl3",
+	ボーカルモチーフ: "hl3",
+	ダンスモチーフ: "hl3",
+	ビジュアルモチーフ: "hl3",
+};
+
 const skills = [
 	{
 		center: "シンデレラウィッシュ",
@@ -170,21 +186,6 @@ const skills = [
 		fitten: "Vi",
 	},
 	{
-		center: "(任意)",
-		speciality: "コンセントレーション",
-		fitten: "Vo",
-	},
-	{
-		center: "(任意)",
-		speciality: "コンセントレーション",
-		fitten: "Da",
-	},
-	{
-		center: "(任意)",
-		speciality: "コンセントレーション",
-		fitten: "Vi",
-	},
-	{
 		center: idolsType + "デュエット (V&S)",
 		speciality: "ミューチャル",
 		fitten: "Vo Da",
@@ -254,7 +255,7 @@ triggers.forEach((trigger) => {
 	skillHead.append(`<th>${trigger}</th>`);
 });
 
-skills.forEach((skill, index) => {
+skills.forEach((skill) => {
 	const corresponds = idols.filter(
 		(idol) =>
 			(idol.center === skill.center || skill.center === "(任意)") &&
@@ -263,9 +264,7 @@ skills.forEach((skill, index) => {
 	);
 
 	if (corresponds.length > 0) {
-		const spec = `<td>${index + 1}</td><td>${skill.center}</td><td>${
-			skill.speciality
-		}</td><td>${skill.fitten}</td>`;
+		const spec = `<td>${skill.center}</td><td>${skill.speciality}</td><td>${skill.fitten}</td>`;
 
 		const mark = triggers
 			.map((trigger) => {
@@ -277,33 +276,27 @@ skills.forEach((skill, index) => {
 			})
 			.join("");
 
-		skillBody.append(`<tr class="${skill.fitten}">${spec}${mark}</tr>`);
+		const highlight = highlights[skill.speciality] || "";
+		skillBody.append(`<tr class="${skill.fitten} ${highlight}">${spec}${mark}</tr>`);
 	}
 });
 
 const idolList = sq("#idol-list");
 const idolBody = idolList.find("tbody");
 
-idols.forEach((idol, index) => {
+idols.forEach((idol) => {
+	const highlight = highlights[idol.speciality] || "";
+
 	idolBody.append(
-		`<tr class="${idol.fitten}"><td>${index + 1}</td><td>${idol.name}</td><td>${
-			idol.clothes
-		}</td><td>${idol.center}</td><td>${idol.speciality}</td><td>${idol.fitten}</td><td>${
-			idol.trigger
-		}</td></tr>`
+		`<tr class="${idol.fitten} ${highlight}"><td>${idol.name}</td><td>${idol.clothes}</td><td>${idol.center}</td><td>${idol.speciality}</td><td>${idol.fitten}</td><td>${idol.trigger}</td></tr>`
 	);
 });
 
-sq("#display-switch").on("click", function () {
+sq('input[name="show"]').on("change", function () {
 	const display = sq("#display");
-
-	if (display.hasClass("skills")) {
-		display.removeClass("skills");
-		display.addClass("idols");
-	} else {
-		display.removeClass("idols");
-		display.addClass("skills");
-	}
+	display.removeClass("idols");
+	display.removeClass("skills");
+	display.addClass(sq(this).val());
 });
 
 sq('input[name="fitten"]').on("change", function () {
@@ -314,4 +307,14 @@ sq('input[name="fitten"]').on("change", function () {
 	} else {
 		display.removeClass(this.value);
 	}
+});
+
+sq("#highlight select").on("change", function () {
+	const value = sq(this).val();
+	sq("#highlight-description").prop("className", value);
+	const display = sq("#display");
+	display.removeClass("hl1");
+	display.removeClass("hl2");
+	display.removeClass("hl3");
+	display.addClass(value);
 });

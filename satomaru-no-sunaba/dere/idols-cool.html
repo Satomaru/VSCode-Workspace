@@ -3,7 +3,7 @@
 <html lang="ja">
 	<head>
 		<title>Cool Idols</title>
-		<link href="idols.css?varsion=20240224a" rel="stylesheet" />
+		<link href="idols.css?version=20240225a" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
 
 		<script>
@@ -141,7 +141,7 @@
 					clothes: "隠し味はロマンティック",
 					center: "クールボイス",
 					speciality: "オーバードライブ",
-					fitten: "Vi",
+					fitten: "Vo",
 					trigger: "9高",
 				},
 				{
@@ -184,23 +184,118 @@
 					fitten: "Vi",
 					trigger: "7高",
 				},
+				{
+					name: "新田美波",
+					clothes: "新春神楽",
+					center: "クールデュエット (S&M)",
+					speciality: "ミューチャル",
+					fitten: "Da Vi",
+					trigger: "9中",
+				},
+				{
+					name: "川島瑞樹",
+					clothes: "エターナル・マイラブ",
+					center: "クールプリンセス",
+					speciality: "オルタネイト",
+					fitten: "Vo",
+					trigger: "6中",
+				},
+				{
+					name: "桐生つかさ",
+					clothes: "プリマステラ・ジュエル",
+					center: "クールプリンセス",
+					speciality: "オルタネイト",
+					fitten: "Vo",
+					trigger: "13高",
+				},
+				{
+					name: "渋谷凛",
+					clothes: "咲きすさぶ青嵐",
+					center: "クールプリンセス",
+					speciality: "オルタネイト",
+					fitten: "Vi",
+					trigger: "9中",
+				},
+				{
+					name: "塩見周子",
+					clothes: "ブルー・ホライゾン",
+					center: "クールプリンセス",
+					speciality: "クールフォーカス",
+					fitten: "Vo",
+					trigger: "7高",
+				},
+				{
+					name: "鷹富士茄子",
+					clothes: "星逢う夜に",
+					center: "クールユニゾン",
+					speciality: "クールアンサンブル",
+					fitten: "Vo",
+					trigger: "7高",
+				},
+				{
+					name: "速水奏",
+					clothes: "エレブレイト・カレイド",
+					center: "クールユニゾン",
+					speciality: "クールアンサンブル",
+					fitten: "Da",
+					trigger: "6中",
+				},
+				{
+					name: "橘ありす",
+					clothes: "ビギニング・スカイ",
+					center: "クールユニゾン",
+					speciality: "クールアンサンブル",
+					fitten: "Da",
+					trigger: "11高",
+				},
+				{
+					name: "神谷奈緒",
+					clothes: "魔性の夜会",
+					center: "クールユニゾン",
+					speciality: "クールアンサンブル",
+					fitten: "Vi",
+					trigger: "9高",
+				},
+				{
+					name: "三船美優",
+					clothes: "教室の白百合",
+					center: "クールユニゾン",
+					speciality: "クールアンサンブル",
+					fitten: "Vi",
+					trigger: "13高",
+				},
 			];
 		</script>
 	</head>
 
 	<body class="cool">
 		<div>
-			<button type="button" id="display-switch">表示切替</button>
+			<label><input type="radio" name="show" value="idols" checked />アイドル</label>
+			<label><input type="radio" name="show" value="skills" />スキル</label>
 			<label><input type="checkbox" name="fitten" value="Vo" checked />Vo</label>
 			<label><input type="checkbox" name="fitten" value="Da" checked />Da</label>
 			<label><input type="checkbox" name="fitten" value="Vi" checked />Vi</label>
+		</div>
+
+		<div id="highlight">
+			<select>
+				<option value="">ハイライトなし</option>
+				<option value="hl1">デュエット編成</option>
+				<option value="hl2">単色レゾ編成(ゲストレゾ)</option>
+				<option value="hl3">単色レゾ編成(ゲストなし)</option>
+			</select>
+			<div id="highlight-description">
+				<span class="hl1">デュエット / ドライブ・ロード・チャル・オルタ・アンサ</span>
+				<span class="hl2">ブレス / リフレ・マジック・ドライブ・ロード・アンサ</span>
+				<span class="hl3">ブレス / リフレ・マジック・コンボナ・モチーフ・アンサ</span>
+				<br />
+			</div>
 		</div>
 
 		<div id="display" class="idols Vo Da Vi">
 			<table id="skill-matrix">
 				<thead>
 					<tr>
-						<th>No.</th>
 						<th>センター効果</th>
 						<th>特技</th>
 						<th>適性</th>
@@ -212,7 +307,6 @@
 			<table id="idol-list">
 				<thead>
 					<tr>
-						<th>No.</th>
 						<th>名前</th>
 						<th>衣装</th>
 						<th>センター効果</th>
@@ -225,6 +319,6 @@
 			</table>
 		</div>
 
-		<script src="idols.js?varsion=20240224a"></script>
+		<script src="idols.js?version=20240225a"></script>
 	</body>
 </html>

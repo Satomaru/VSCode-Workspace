@@ -1,3 +1,13 @@
+* {
+	font-size: 9pt;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
 table {
 	border: 2px solid #ccc;
 	border-collapse: collapse;
@@ -10,7 +20,6 @@ td {
 	padding: 2px;
 	font-family: sans-serif;
 	font-weight: normal;
-	font-size: 9pt;
 	color: #444;
 }
 
@@ -34,38 +43,46 @@ tbody tr {
 	display: none;
 }
 
-td:first-child {
-	text-align: right;
-}
-
 #display {
 	margin-top: 4px;
 }
 
-#skill-matrix {
-	display: none;
-}
-
+#skill-matrix,
 #idol-list {
 	display: none;
 }
 
-#display.skills #skill-matrix {
-	display: table;
-}
-
+#display.skills #skill-matrix,
 #display.idols #idol-list {
 	display: table;
 }
 
-#display.Vo tr.Vo {
-	display: table-row;
-}
-
-#display.Da tr.Da {
-	display: table-row;
-}
-
+#display.Vo tr.Vo,
+#display.Da tr.Da,
 #display.Vi tr.Vi {
 	display: table-row;
+}
+
+#display.hl1 tr.hl1,
+#display.hl2 tr.hl2,
+#display.hl3 tr.hl3 {
+	background-color: #ff8;
+}
+
+#highlight {
+	display: flex;
+	flex-direction: row;
+	gap: 4px;
+}
+
+#highlight-description span {
+	display: none;
+}
+
+#highlight-description.hl1 .hl1,
+#highlight-description.hl2 .hl2,
+#highlight-description.hl3 .hl3 {
+	display: inline-block;
+	padding: 0 2px;
+	background-color: #ff8;
 }
