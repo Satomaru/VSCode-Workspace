@@ -1,43 +1,43 @@
 body.speed {
-	background-color: #eef;
+    background-color: #eef;
 }
 
 body.friend {
-	background-color: #ffe;
+    background-color: #ffe;
 }
 
 body.speed h1 {
-	border: outset 3px #ccf;
-	background-color: #ccf;
+    border: outset 3px #ccf;
+    background-color: #ccf;
 }
 
 body.friend h1 {
-	border: outset 3px #eea;
-	background-color: #eea;
+    border: outset 3px #eea;
+    background-color: #eea;
 }
 
 table.event-options {
-	width: 640px;
+    width: 640px;
 }
 
 table.event-options tbody tr:nth-child(1) {
-	background-color: #ffd;
+    background-color: #ffd;
 }
 
 table.event-options tbody tr:nth-child(2) {
-	background-color: #fdf;
+    background-color: #fdf;
 }
 
 table.event-options tbody tr:nth-child(3) {
-	background-color: #dff;
+    background-color: #dff;
 }
 
 table.event-options tbody th {
-	width: 20em;
+    width: 20em;
 }
 
 table.event-options tbody .suitably {
-	width: 2em;
-	font-size: 13pt;
-	text-align: center;
+    width: 2em;
+    font-size: 11pt;
+    text-align: center;
 }
