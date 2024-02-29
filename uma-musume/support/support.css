@@ -2,6 +2,10 @@ body.speed {
     background-color: #eef;
 }
 
+body.intelligence {
+    background-color: #efe;
+}
+
 body.friend {
     background-color: #ffe;
 }
@@ -9,6 +13,11 @@ body.friend {
 body.speed h1 {
     border: outset 3px #ccf;
     background-color: #ccf;
+}
+
+body.intelligence h1 {
+    border: outset 3px #cfc;
+    background-color: #cfc;
 }
 
 body.friend h1 {
