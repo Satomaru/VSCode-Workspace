@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+	<title>根性 SSR ハルウララ</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="../../default.css?version=20240229c" />
+	<link rel="stylesheet" href="../support.css?version=20240229c" />
+	<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
+</head>
+
+<body class="intelligence">
+	<header>
+		<h1><img src="../../images/guts.png" alt="guts"> SSR ハルウララ</h1>
+
+		<nav>
+			<ol>
+				<li><a href="../../">ウマ娘</a></li>
+				<li><a href="../">サポート</a></li>
+				<li>根性 SSR ハルウララ</li>
+			</ol>
+		</nav>
+	</header>
+
+	<article>
+		<h2>イベント選択肢</h2>
+
+		<table class="event-options">
+			<caption>
+				うららん☆テスト勉強
+			</caption>
+			<thead>
+				<tr>
+					<th>選択肢</th>
+					<th>適正</th>
+					<th>効果</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>リズムに合わせると覚えやすいぞ</th>
+					<td class="suitably">C</td>
+					<td class="effect">
+						<ul>
+							<li>賢さ +5</li>
+							<li>体力 +10</li>
+							<li>絆ゲージ +5</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>ご褒美があるとやる気が出るぞ</th>
+					<td class="suitably">B</td>
+					<td class="effect">
+						<ul>
+							<li>賢さ +5</li>
+							<li>やる気 +1</li>
+							<li>絆ゲージ +5</li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="event-options">
+			<caption>
+				うららん☆ふくへーダッシュ！
+			</caption>
+			<thead>
+				<tr>
+					<th>選択肢</th>
+					<th>適正</th>
+					<th>効果</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>伏兵の正しい意味を教える</th>
+					<td class="suitably">C</td>
+					<td class="effect">
+						<ul>
+							<li><em>「伏兵◯」☆1</em> のヒント Lv+1</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>休んだ方がいいと伝える</th>
+					<td class="suitably">B</td>
+					<td class="effect">
+						<ul>
+							<li>やる気 +1</li>
+							<li>体力 +10</li>
+							<li>絆ゲージ +5</li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+
+	<dialog id="suitably-AA">
+		<h3>適正 AA</h3>
+
+		<ul>
+			<li>非常に重要なスキルが取得できる。</li>
+			<li>ステータス上昇の合計値が +30 以上。</li>
+			<li>重要なキャラとお出かけができる。</li>
+		</ul>
+
+		<form method="dialog">
+			<button type="submit">OK</button>
+		</form>
+	</dialog>
+
+	<dialog id="suitably-A">
+		<h3>適正 A</h3>
+
+		<ul>
+			<li>重要なスキルが取得できる。</li>
+			<li>ステータス上昇の合計値が +20 以上。</li>
+			<li>大きく回復する。</li>
+		</ul>
+
+		<form method="dialog">
+			<button type="submit">OK</button>
+		</form>
+	</dialog>
+
+	<dialog id="suitably-B">
+		<h3>適正 B</h3>
+
+		<ul>
+			<li>役に立つスキルが取得できる。</li>
+			<li>ステータス上昇の合計値が +10 以上。</li>
+			<li>やる気が上がる。</li>
+		</ul>
+
+		<form method="dialog">
+			<button type="submit">OK</button>
+		</form>
+	</dialog>
+
+	<dialog id="suitably-C">
+		<h3>適正 C</h3>
+
+		<ul>
+			<li>大きなデメリットはない。</li>
+		</ul>
+
+		<form method="dialog">
+			<button type="submit">OK</button>
+		</form>
+	</dialog>
+
+	<dialog id="suitably-D">
+		<h3>適正 D</h3>
+
+		<ul>
+			<li>大きなデメリットがある。</li>
+		</ul>
+
+		<form method="dialog">
+			<button type="submit">OK</button>
+		</form>
+	</dialog>
+
+	<script>
+		sq("td.suitably").on("click", function () {
+			sq(`#suitably-${sq(this).text()}`).get(0).showModal();
+		});
+	</script>
+</body>
+
+</html>
