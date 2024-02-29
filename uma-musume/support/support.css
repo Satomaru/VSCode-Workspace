@@ -49,4 +49,7 @@ table.event-options tbody td.suitably {
     width: 2em;
     font-size: 11pt;
     text-align: center;
+    color: #00f;
+    text-decoration: underline 1px #00f;
+    cursor: pointer;
 }

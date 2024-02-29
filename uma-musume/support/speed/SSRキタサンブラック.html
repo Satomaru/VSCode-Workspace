@@ -5,8 +5,8 @@
 <head>
 	<title>スピード SSR キタサンブラック</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="../../default.css?version=20240229b" />
-	<link rel="stylesheet" href="../support.css?version=20240229b" />
+	<link rel="stylesheet" href="../../default.css?version=20240229c" />
+	<link rel="stylesheet" href="../support.css?version=20240229c" />
 	<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
 </head>
 
@@ -203,14 +203,8 @@
 	</dialog>
 
 	<script>
-		sq("td.suitably").each(function () {
-			const td = sq(this);
-			td.html(`<span class='link suitably'>${td.text()}</span>`);
-		});
-
-		sq("span.link.suitably").on("click", function () {
-			const span = sq(this);
-			sq(`#suitably-${span.text()}`).get(0).showModal();
+		sq("td.suitably").on("click", function () {
+			sq(`#suitably-${sq(this).text()}`).get(0).showModal();
 		});
 	</script>
 </body>

@@ -82,6 +82,7 @@ em {
 span.link {
     color: #00f;
     text-decoration: underline 1px #00f;
+    cursor: pointer;
 }
 
 ul {
