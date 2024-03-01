@@ -69,6 +69,10 @@ article {
     margin: 0 0 2em 1em;
 }
 
+p {
+    margin: 0 0 1em 1em;
+}
+
 u {
     text-decoration: underline double #f00;
 }
@@ -110,7 +114,6 @@ menu {
     margin: 0 0 0 1em;
     padding: 0;
     list-style: none;
-    font-size: 15px;
 }
 
 table {

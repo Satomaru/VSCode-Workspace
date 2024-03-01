@@ -2,6 +2,10 @@ body.speed {
     background-color: #eef;
 }
 
+body.stamina {
+    background-color: #fee;
+}
+
 body.intelligence {
     background-color: #efe;
 }
@@ -15,6 +19,11 @@ body.speed h1 {
     background-color: #ccf;
 }
 
+body.stamina h1 {
+    border: outset 3px #fcc;
+    background-color: #fcc;
+}
+
 body.intelligence h1 {
     border: outset 3px #cfc;
     background-color: #cfc;
@@ -26,7 +35,7 @@ body.friend h1 {
 }
 
 table.event-options {
-    width: 640px;
+    width: 800px;
 }
 
 table.event-options tbody tr:nth-child(1) {
