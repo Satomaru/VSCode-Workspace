@@ -99,77 +99,7 @@
 		</table>
 	</article>
 
-	<dialog id="suitably-AA">
-		<h3>適正 AA</h3>
-
-		<ul>
-			<li>非常に重要なスキルが取得できる。</li>
-			<li>ステータス上昇の合計値が +30 以上。</li>
-			<li>重要なキャラとお出かけができる。</li>
-		</ul>
-
-		<form method="dialog">
-			<button type="submit">OK</button>
-		</form>
-	</dialog>
-
-	<dialog id="suitably-A">
-		<h3>適正 A</h3>
-
-		<ul>
-			<li>重要なスキルが取得できる。</li>
-			<li>ステータス上昇の合計値が +20 以上。</li>
-			<li>大きく回復する。</li>
-		</ul>
-
-		<form method="dialog">
-			<button type="submit">OK</button>
-		</form>
-	</dialog>
-
-	<dialog id="suitably-B">
-		<h3>適正 B</h3>
-
-		<ul>
-			<li>役に立つスキルが取得できる。</li>
-			<li>ステータス上昇の合計値が +10 以上。</li>
-			<li>やる気が上がる。</li>
-		</ul>
-
-		<form method="dialog">
-			<button type="submit">OK</button>
-		</form>
-	</dialog>
-
-	<dialog id="suitably-C">
-		<h3>適正 C</h3>
-
-		<ul>
-			<li>大きなデメリットはない。</li>
-		</ul>
-
-		<form method="dialog">
-			<button type="submit">OK</button>
-		</form>
-	</dialog>
-
-	<dialog id="suitably-D">
-		<h3>適正 D</h3>
-
-		<ul>
-			<li>大きなデメリットがある。</li>
-		</ul>
-
-		<form method="dialog">
-			<button type="submit">OK</button>
-		</form>
-	</dialog>
-
-	<script>
-		sq("td.suitably").on("click", function () {
-			sq(`#suitably-${sq(this).text()}`).get(0).showModal();
-		});
-	</script>
+	<script src="../support.js?version=20240301a"></script>
 </body>
 
 </html>
