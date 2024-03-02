@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+	<head>
+		<title>マイル オグリキャップ</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+		<link rel="stylesheet" href="../../../default.css?version=20240302a" />
+		<link rel="stylesheet" href="../training.css?version=20240303a" />
+		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
+	</head>
+
+	<body class="mile">
+		<header>
+			<h1>マイル オグリキャップ</h1>
+
+			<nav>
+				<ol>
+					<li><a href="../../../">さとまるのメモ帳</a></li>
+					<li><a href="../../">ウマ娘</a></li>
+					<li><a href="../">育成</a></li>
+					<li>マイル オグリキャップ</li>
+				</ol>
+			</nav>
+		</header>
+
+		<article>
+			<h2>U.A.F. レーススケジュール</h2>
+
+			<p>予約したレースをクリックすると、理由が表示されます。</p>
+
+			<p>
+				<img src="../../images/オグリキャップ・ジュニア級.png" class="race-schedule" usemap="#schedule-junior" />
+				<img src="../../images/オグリキャップ・クラシック級.png" class="race-schedule" usemap="#schedule-classic" />
+				<img src="../../images/オグリキャップ・シニア級.png" class="race-schedule" usemap="#schedule-senior" />
+			</p>
+		</article>
+
+		<script>
+			const schedule = {
+				"schedule-junior-23": { race: "ホープフルステークス", reason: "目標2の達成条件" },
+				"schedule-classic-6": { race: "皐月賞", reason: "クラシック三冠" },
+				"schedule-classic-9": { race: "日本ダービー", reason: "クラシック三冠" },
+				"schedule-classic-11": { race: "宝塚記念", reason: "「笠松の食いしん坊」進化条件" },
+				"schedule-classic-19": { race: "菊花賞", reason: "隠しイベント「これからも、みんなと」発生条件" },
+				"schedule-senior-5": { race: "大阪杯", reason: "隠しイベント「これからも、みんなと」発生条件" },
+				"schedule-senior-7": { race: "天皇賞(春)", reason: "隠しイベント「これからも、みんなと」発生条件" },
+				"schedule-senior-10": { race: "安田記念", reason: "「怪物的コーナリング」進化条件" },
+				"schedule-senior-11": { race: "宝塚記念", reason: "「笠松の食いしん坊」進化条件" },
+				"schedule-senior-21": { race: "ジャパンカップ", reason: "秋シニア三冠" },
+			};
+		</script>
+		<script src="../training.js?version=20240303a"></script>
+	</body>
+</html>
