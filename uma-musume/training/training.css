@@ -7,9 +7,19 @@ body.mile h1 {
 	background-color: #cfc;
 }
 
-img.race-schedule {
+div.race-schedule {
+	display: flex;
+	gap: 8px;
+	margin: 0 0 1em 1em;
+}
+
+div.race-schedule img {
 	width: 372px;
 	height: 566px;
+}
+
+div.race-schedule tbody th {
+	text-align: right;
 }
 
 table.event-options {

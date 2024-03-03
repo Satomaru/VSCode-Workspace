@@ -2,53 +2,146 @@
 
 <html lang="ja">
 	<head>
-		<title>(マイル) オグリキャップ</title>
+		<title>マイル・先行 オグリキャップ</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-		<link rel="stylesheet" href="../../../default.css?version=20240302a" />
-		<link rel="stylesheet" href="../training.css?version=20240303a" />
+		<link rel="stylesheet" href="../../../default.css?version=20240304a" />
+		<link rel="stylesheet" href="../training.css?version=20240304a" />
 		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
 	</head>
 
 	<body class="mile">
 		<header>
-			<h1><img src="../../images/mile.png" alt="mile" /> オグリキャップ</h1>
+			<h1>
+				<img src="../../images/mile.png" alt="マイル" />
+				<img src="../../images/先行.svg" alt="先行" />
+				オグリキャップ
+			</h1>
 
 			<nav>
 				<ol>
 					<li><a href="../../../">さとまるのメモ帳</a></li>
 					<li><a href="../../">ウマ娘</a></li>
 					<li><a href="../">育成</a></li>
-					<li>(マイル) オグリキャップ</li>
+					<li>マイル・先行 オグリキャップ</li>
 				</ol>
 			</nav>
 		</header>
 
 		<article>
-			<h2>U.A.F. 予約レース一覧</h2>
+			<h2>予約レース一覧</h2>
 
-			<p>予約したレースをクリックすると、理由が表示されます。</p>
+			<div class="race-schedule">
+				<img src="../../images/オグリキャップ・ジュニア級.png" />
 
-			<p>
-				<img src="../../images/オグリキャップ・ジュニア級.png" class="race-schedule" usemap="#schedule-junior" />
-				<img src="../../images/オグリキャップ・クラシック級.png" class="race-schedule" usemap="#schedule-classic" />
-				<img src="../../images/オグリキャップ・シニア級.png" class="race-schedule" usemap="#schedule-senior" />
-			</p>
+				<div>
+					<table>
+						<caption>
+							ジュニア級
+						</caption>
+						<thead>
+							<tr>
+								<th>時期</th>
+								<th>レース</th>
+								<th>理由</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>12月 後半</th>
+								<td>ホープフルステークス</td>
+								<td>目標2の達成</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="race-schedule">
+				<img src="../../images/オグリキャップ・クラシック級.png" />
+
+				<div>
+					<table>
+						<caption>
+							クラシック級
+						</caption>
+						<thead>
+							<tr>
+								<th>時期</th>
+								<th>レース</th>
+								<th>理由</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>4月 前半</th>
+								<td>皐月賞</td>
+								<td>クラシック三冠</td>
+							</tr>
+							<tr>
+								<th>5月 後半</th>
+								<td>日本ダービー</td>
+								<td>クラシック三冠</td>
+							</tr>
+							<tr>
+								<th>6月 後半</th>
+								<td>宝塚記念</td>
+								<td>スキル「笠松の食いしん坊」進化条件</td>
+							</tr>
+							<tr>
+								<th>10月 後半</th>
+								<td>菊花賞</td>
+								<td>隠しイベント「これからも、みんなと」発生条件</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="race-schedule">
+				<img src="../../images/オグリキャップ・シニア級.png" />
+
+				<div>
+					<table>
+						<caption>
+							シニア級
+						</caption>
+						<thead>
+							<tr>
+								<th>時期</th>
+								<th>レース</th>
+								<th>理由</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>3月 後半</th>
+								<td>大阪杯</td>
+								<td>隠しイベント「これからも、みんなと」発生条件</td>
+							</tr>
+							<tr>
+								<th>4月 後半</th>
+								<td>天皇賞(春)</td>
+								<td>隠しイベント「これからも、みんなと」発生条件</td>
+							</tr>
+							<tr>
+								<th>6月 前半</th>
+								<td>安田記念</td>
+								<td>スキル「怪物的コーナリング」進化条件</td>
+							</tr>
+							<tr>
+								<th>6月 後半</th>
+								<td>宝塚記念</td>
+								<td>スキル「笠松の食いしん坊」進化条件</td>
+							</tr>
+							<tr>
+								<th>11月 後半</th>
+								<td>ジャパンカップ</td>
+								<td>秋シニア三冠</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</article>
-
-		<script>
-			const schedule = {
-				"schedule-junior-23": { race: "ホープフルステークス", reason: "目標2の達成条件" },
-				"schedule-classic-6": { race: "皐月賞", reason: "クラシック三冠" },
-				"schedule-classic-9": { race: "日本ダービー", reason: "クラシック三冠" },
-				"schedule-classic-11": { race: "宝塚記念", reason: "「笠松の食いしん坊」進化条件" },
-				"schedule-classic-19": { race: "菊花賞", reason: "隠しイベント「これからも、みんなと」発生条件" },
-				"schedule-senior-5": { race: "大阪杯", reason: "隠しイベント「これからも、みんなと」発生条件" },
-				"schedule-senior-7": { race: "天皇賞(春)", reason: "隠しイベント「これからも、みんなと」発生条件" },
-				"schedule-senior-10": { race: "安田記念", reason: "「怪物的コーナリング」進化条件" },
-				"schedule-senior-11": { race: "宝塚記念", reason: "「笠松の食いしん坊」進化条件" },
-				"schedule-senior-21": { race: "ジャパンカップ", reason: "秋シニア三冠" },
-			};
-		</script>
-		<script src="../training.js?version=20240303a"></script>
 	</body>
 </html>

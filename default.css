@@ -1,147 +1,153 @@
 body {
-    margin: 1em 1em 4em 1em;
-    background-color: #eee;
-    font-size: 13px;
+	margin: 1em 1em 4em 1em;
+	background-color: #eee;
+	font-size: 13px;
 }
 
 header {
-    margin: 0 0 2em 0;
+	margin: 0 0 2em 0;
 }
 
 header nav {
-    margin: 4px 0 0 8px;
+	margin: 4px 0 0 8px;
 }
 
 header nav ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 8px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	gap: 8px;
 }
 
 header nav li:nth-child(n + 2)::before {
-    padding-right: 8px;
-    content: ">";
+	padding-right: 8px;
+	content: ">";
 }
 
 h1 {
-    width: 800px;
-    margin: 0;
-    border: outset 3px #ddd;
-    padding: 4px 4px 4px 8px;
-    background-color: #ddd;
-    color: #000;
-    font-size: 32px;
-    line-height: 46px;
-    vertical-align: middle;
+	width: 800px;
+	margin: 0;
+	border: outset 3px #ddd;
+	padding: 4px 4px 4px 8px;
+	background-color: #ddd;
+	color: #000;
+	font-size: 32px;
+	line-height: 46px;
+	vertical-align: middle;
 }
 
 h1 img {
-    width: 32px;
-    height: 32px;
-    vertical-align: -4px;
+	width: 32px;
+	height: 32px;
+	vertical-align: -4px;
 }
 
 h2 {
-    width: 640px;
-    margin: 0 0 1em 0;
-    border-bottom: double 3px #000;
-    padding: 0 0 0 4px;
-    font-size: 20px;
-    line-height: 27px;
+	width: 640px;
+	margin: 0 0 1em 0;
+	border-bottom: double 3px #000;
+	padding: 0 0 0 4px;
+	font-size: 20px;
+	line-height: 27px;
 }
 
 h2 img {
-    width: 20px;
-    height: 20px;
-    vertical-align: -2px;
+	width: 20px;
+	height: 20px;
+	vertical-align: -2px;
 }
 
 h3 {
-    margin: 0 0 1em 0;
-    padding: 0;
-    font-size: 15px;
-    line-height: 15px;
+	margin: 0 0 1em 0;
+	padding: 0;
+	font-size: 15px;
+	line-height: 15px;
 }
 
 article {
-    margin: 0 0 2em 1em;
+	margin: 0 0 2em 1em;
 }
 
 p {
-    margin: 0 0 1em 1em;
+	margin: 0 0 1em 1em;
 }
 
 u {
-    text-decoration: underline double #f00;
+	text-decoration: underline double #f00;
 }
 
 em {
-    font-weight: bold;
-    font-style: normal;
-    color: #f44;
+	font-weight: bold;
+	font-style: normal;
+	color: #f44;
 }
 
 span.link {
-    color: #00f;
-    text-decoration: underline 1px #00f;
-    cursor: pointer;
+	color: #00f;
+	text-decoration: underline 1px #00f;
+	cursor: pointer;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 dialog {
-    min-width: 320px;
-    border: 1px solid #aa9;
-    border-radius: 4px;
-    padding: 8px;
-    background-color: #ffe;
+	min-width: 320px;
+	border: 1px solid #aa9;
+	border-radius: 4px;
+	padding: 8px;
+	background-color: #ffe;
 }
 
 dialog form {
-    margin-top: 16px;
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 8px;
+	margin-top: 16px;
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 8px;
 }
 
 menu {
-    margin: 0 0 0 1em;
-    padding: 0;
-    list-style: none;
+	margin: 0 0 0 1em;
+	padding: 0;
+	list-style: none;
+}
+
+menu img {
+	width: 20px;
+	height: 20px;
+	vertical-align: -4px;
 }
 
 table {
-    margin: 0 0 2em 0;
-    border: 2px solid #888;
-    empty-cells: show;
-    border-spacing: 0;
-    border-collapse: collapse;
+	margin: 0 0 2em 0;
+	border: 2px solid #888;
+	empty-cells: show;
+	border-spacing: 0;
+	border-collapse: collapse;
 }
 
 caption {
-    font-size: 15px;
-    font-weight: bold;
-    text-align: left;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: left;
 }
 
 th,
 td {
-    border: 1px solid #888;
-    padding: 4px 8px;
+	border: 1px solid #888;
+	padding: 4px 8px;
 }
 
 thead th {
-    background-color: #ea0;
-    color: #fff;
-    font-weight: normal;
+	background-color: #ea0;
+	color: #fff;
+	font-weight: normal;
 }
 
 tbody th {
-    font-weight: bold;
+	font-weight: bold;
 }
