@@ -1,64 +1,13 @@
-body.speed {
-    background-color: #eef;
-}
-
-body.stamina {
-    background-color: #fee;
-}
-
-body.intelligence {
-    background-color: #efe;
-}
-
-body.friend {
-    background-color: #ffe;
-}
-
-body.speed h1 {
-    border: outset 3px #ccf;
-    background-color: #ccf;
-}
-
-body.stamina h1 {
-    border: outset 3px #fcc;
-    background-color: #fcc;
-}
-
-body.intelligence h1 {
-    border: outset 3px #cfc;
-    background-color: #cfc;
-}
-
-body.friend h1 {
-    border: outset 3px #eea;
-    background-color: #eea;
-}
-
-table.event-options {
+details {
     width: 800px;
 }
 
-table.event-options tbody tr:nth-child(1) {
-    background-color: #ffd;
+table {
+    width: 100%;
 }
 
-table.event-options tbody tr:nth-child(2) {
-    background-color: #fdf;
-}
-
-table.event-options tbody tr:nth-child(3) {
-    background-color: #dff;
-}
-
-table.event-options tbody th {
-    width: 20em;
-}
-
-table.event-options tbody td.suitably {
-    width: 2em;
-    font-size: 11pt;
-    text-align: center;
-    color: #00f;
-    text-decoration: underline 1px #00f;
-    cursor: pointer;
+.event-options tbody th {
+    text-align: left;
+    white-space: nowrap;
+    width: 1em;
 }
