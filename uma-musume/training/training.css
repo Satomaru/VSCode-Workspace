@@ -1,0 +1,52 @@
+body.mile {
+	background-color: #efe;
+}
+
+body.mile h1 {
+	border: outset 3px #cfc;
+	background-color: #cfc;
+}
+
+div.race-schedule {
+	display: flex;
+	gap: 8px;
+	margin: 0 0 1em 1em;
+}
+
+div.race-schedule img {
+	width: 372px;
+	height: 566px;
+}
+
+div.race-schedule tbody th {
+	text-align: right;
+}
+
+table.event-options {
+	width: 800px;
+}
+
+table.event-options tbody tr:nth-child(1) {
+	background-color: #ffd;
+}
+
+table.event-options tbody tr:nth-child(2) {
+	background-color: #fdf;
+}
+
+table.event-options tbody tr:nth-child(3) {
+	background-color: #dff;
+}
+
+table.event-options tbody th {
+	width: 20em;
+}
+
+table.event-options tbody td.suitably {
+	width: 2em;
+	font-size: 11pt;
+	text-align: center;
+	color: #00f;
+	text-decoration: underline 1px #00f;
+	cursor: pointer;
+}

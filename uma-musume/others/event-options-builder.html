@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 
 <html lang="ja">
+	<head>
+		<title>イベント選択肢 HTML 作成ツール</title>
+		<link rel="stylesheet" href="../../default.css?version=20240302a" />
 
-<head>
-	<title>イベント選択肢 HTML 作成ツール</title>
-	<link href="../default.css?version=20240229b" rel="stylesheet" />
+		<style>
+			pre {
+				width: 1024px;
+				margin: 0 0 1em 1em;
+				padding: 4px;
+				background-color: #004;
+				color: #ddd;
+				tab-size: 2em;
+			}
+		</style>
+	</head>
 
-	<style>
-		pre {
-			width: 1024px;
-			margin: 0 0 1em 1em;
-			padding: 4px;
-			background-color: #004;
-			color: #ddd;
-			tab-size: 2em;
-		}
-	</style>
-</head>
+	<body>
+		<header>
+			<h1>イベント選択肢 HTML 作成ツール</h1>
 
-<body>
-	<header>
-		<h1>イベント選択肢 HTML 作成ツール</h1>
+			<nav>
+				<ol>
+					<li><a href="../../">さとまるのメモ帳</a></li>
+					<li><a href="../">ウマ娘</a></li>
+					<li>イベント選択肢 HTML 作成ツール</li>
+				</ol>
+			</nav>
+		</header>
 
-		<nav>
-			<ol>
-				<li><a href="../">ウマ娘</a></li>
-				<li>イベント選択肢 HTML 作成ツール</li>
-			</ol>
-		</nav>
-	</header>
+		<div>
+			<p>
+				<a href="../../Mery/html-parse-umamusume-event-options.js"
+					>html-parse-umamusume-event-options.js</a
+				>
+			</p>
 
-	<div>
-		<p>
-			<a href="../../Mery/html-parse-umamusume-event-options.js">html-parse-umamusume-event-options.js</a>
-		</p>
+			<p>
+				<a
+					href="https://www.haijin-boys.com/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8"
+				>
+					テキストエディタ Mery</a
+				>
+				で使用できます。多くは語らないけど、下のようなテキストが……
+			</p>
 
-		<p>
-			<a href="https://www.haijin-boys.com/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8">
-				テキストエディタ Mery</a> で使用できます。多くは語らないけど、下のようなテキストが……
-		</p>
-
-		<pre><code>
+			<pre><code>
 君は、テンポ・ジュストなアンダンテ
 	AA:ふ、俺は気まぐれなヴァイオリン……さ
 		{!} 連続イベント後、『ハヤテ一文字』のヒントを取得
@@ -85,11 +91,9 @@
 		絆ゲージ +5
 		</code></pre>
 
-		<p>
-			……こんな感じに変換されます。
-		</p>
+			<p>……こんな感じに変換されます。</p>
 
-		<pre><code>
+			<pre><code>
 &lt;table class="event-options"&gt;
 	&lt;caption&gt;君は、テンポ・ジュストなアンダンテ&lt;/caption&gt;
 	&lt;thead&gt;
@@ -233,7 +237,6 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 			</code></pre>
-	</div>
-</body>
-
+		</div>
+	</body>
 </html>

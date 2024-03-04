@@ -1,202 +1,201 @@
 <!DOCTYPE html>
 
 <html lang="ja">
+	<head>
+		<title>スピード SSR エルコンドルパサー</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+		<link rel="stylesheet" href="../../../default.css?version=20240302a" />
+		<link rel="stylesheet" href="../support.css?version=20240229c" />
+		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
+	</head>
 
-<head>
-	<title>スピード SSR エルコンドルパサー</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="../../default.css?version=20240229c" />
-	<link rel="stylesheet" href="../support.css?version=20240229c" />
-	<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
-</head>
+	<body class="speed">
+		<header>
+			<h1><img src="../../images/speed.png" alt="speed" /> SSR エルコンドルパサー</h1>
 
-<body class="speed">
-	<header>
-		<h1><img src="../../images/speed.png" alt="speed"> SSR エルコンドルパサー</h1>
+			<nav>
+				<ol>
+					<li><a href="../../../">さとまるのメモ帳</a></li>
+					<li><a href="../../">ウマ娘</a></li>
+					<li><a href="../">サポート</a></li>
+					<li>スピード SSR エルコンドルパサー</li>
+				</ol>
+			</nav>
+		</header>
 
-		<nav>
-			<ol>
-				<li><a href="../../">ウマ娘</a></li>
-				<li><a href="../">サポート</a></li>
-				<li>スピード SSR エルコンドルパサー</li>
-			</ol>
-		</nav>
-	</header>
+		<article>
+			<h2>イベント選択肢</h2>
 
-	<article>
-		<h2>イベント選択肢</h2>
+			<table class="event-options">
+				<caption>
+					ボナペティ♪フランス料理！
+				</caption>
+				<thead>
+					<tr>
+						<th>選択肢</th>
+						<th>適正</th>
+						<th>効果</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>新しい激辛メニューを開発するのはどう？</th>
+						<td class="suitably">AA</td>
+						<td class="effect">
+							<ul>
+								<li>スピード +15</li>
+								<li><em>中距離「テンポアップ」☆4</em> のヒント Lv+3</li>
+								<li>絆ゲージ +15</li>
+							</ul>
+							<hr />
+							<ul>
+								<li>スピード +5</li>
+								<li><em>中距離「テンポアップ」☆4</em> のヒント Lv+1</li>
+								<li>絆ゲージ +5</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th>フランスの暮らしを勉強するのもいいかも</th>
+						<td class="suitably">C</td>
+						<td class="effect">
+							<ul>
+								<li>体力 +15</li>
+								<li>スキルPt +15</li>
+								<li>絆ゲージ +5</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
-		<table class="event-options">
-			<caption>
-				ボナペティ♪フランス料理！
-			</caption>
-			<thead>
-				<tr>
-					<th>選択肢</th>
-					<th>適正</th>
-					<th>効果</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>新しい激辛メニューを開発するのはどう？</th>
-					<td class="suitably">AA</td>
-					<td class="effect">
-						<ul>
-							<li>スピード +15</li>
-							<li><em>中距離「テンポアップ」☆4</em> のヒント Lv+3</li>
-							<li>絆ゲージ +15</li>
-						</ul>
-						<hr>
-						<ul>
-							<li>スピード +5</li>
-							<li><em>中距離「テンポアップ」☆4</em> のヒント Lv+1</li>
-							<li>絆ゲージ +5</li>
-						</ul>
-					</td>
-				</tr>
-				<tr>
-					<th>フランスの暮らしを勉強するのもいいかも</th>
-					<td class="suitably">C</td>
-					<td class="effect">
-						<ul>
-							<li>体力 +15</li>
-							<li>スキルPt +15</li>
-							<li>絆ゲージ +5</li>
-						</ul>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+			<table class="event-options">
+				<caption>
+					世界への飛翔
+				</caption>
+				<thead>
+					<tr>
+						<th>選択肢</th>
+						<th>適正</th>
+						<th>効果</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>『凱旋門賞』の先を見てるなんて……</th>
+						<td class="suitably">AA</td>
+						<td class="effect">
+							<ul>
+								<li>スピード +20</li>
+								<li>スタミナ +20</li>
+								<li><em>先行/差し「王手」☆4</em> のヒント Lv+3</li>
+								<li>絆ゲージ +5</li>
+							</ul>
+							<hr />
+							<ul>
+								<li>スピード +10</li>
+								<li>スタミナ +5</li>
+								<li><em>先行/差し「王手」☆4</em> のヒント Lv+1</li>
+								<li>絆ゲージ +5</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th>徹底した準備の大切さを実感した</th>
+						<td class="suitably">AA</td>
+						<td class="effect">
+							<ul>
+								<li>スピード +10</li>
+								<li>スタミナ +10</li>
+								<li><em>「弧線のプロフェッサー」☆5</em> のヒント Lv+3</li>
+								<li>体力 +10</li>
+								<li>絆ゲージ+5</li>
+							</ul>
+							<hr />
+							<ul>
+								<li>スピード +5</li>
+								<li>スタミナ +5</li>
+								<li><em>「弧線のプロフェッサー」☆5</em> のヒント Lv+1</li>
+								<li>体力 +5</li>
+								<li>絆ゲージ +5</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
-		<table class="event-options">
-			<caption>
-				世界への飛翔
-			</caption>
-			<thead>
-				<tr>
-					<th>選択肢</th>
-					<th>適正</th>
-					<th>効果</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>『凱旋門賞』の先を見てるなんて……</th>
-					<td class="suitably">AA</td>
-					<td class="effect">
-						<ul>
-							<li>スピード +20</li>
-							<li>スタミナ +20</li>
-							<li><em>先行/差し「王手」☆4</em> のヒント Lv+3</li>
-							<li>絆ゲージ +5</li>
-						</ul>
-						<hr>
-						<ul>
-							<li>スピード +10</li>
-							<li>スタミナ +5</li>
-							<li><em>先行/差し「王手」☆4</em> のヒント Lv+1</li>
-							<li>絆ゲージ +5</li>
-						</ul>
-					</td>
-				</tr>
-				<tr>
-					<th>徹底した準備の大切さを実感した</th>
-					<td class="suitably">AA</td>
-					<td class="effect">
-						<ul>
-							<li>スピード +10</li>
-							<li>スタミナ +10</li>
-							<li><em>「弧線のプロフェッサー」☆5</em> のヒント Lv+3</li>
-							<li>体力 +10</li>
-							<li>絆ゲージ+5</li>
-						</ul>
-						<hr>
-						<ul>
-							<li>スピード +5</li>
-							<li>スタミナ +5</li>
-							<li><em>「弧線のプロフェッサー」☆5</em> のヒント Lv+1</li>
-							<li>体力 +5</li>
-							<li>絆ゲージ +5</li>
-						</ul>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+			<table class="event-options">
+				<caption>
+					シークレット・ノート！
+				</caption>
+				<thead>
+					<tr>
+						<th>選択肢</th>
+						<th>適正</th>
+						<th>効果</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>エル流パワートレメニュー</th>
+						<td class="suitably">B</td>
+						<td class="effect">
+							<ul>
+								<li>パワー +10</li>
+								<li>絆ゲージ +5</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th>晴れたレースで走るコツ</th>
+						<td class="suitably">C</td>
+						<td class="effect">
+							<ul>
+								<li><em>「晴れの日◯」</em> のヒント Lv+1</li>
+								<li>絆ゲージ +5</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
-		<table class="event-options">
-			<caption>
-				シークレット・ノート！
-			</caption>
-			<thead>
-				<tr>
-					<th>選択肢</th>
-					<th>適正</th>
-					<th>効果</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>エル流パワートレメニュー</th>
-					<td class="suitably">B</td>
-					<td class="effect">
-						<ul>
-							<li>パワー +10</li>
-							<li>絆ゲージ +5</li>
-						</ul>
-					</td>
-				</tr>
-				<tr>
-					<th>晴れたレースで走るコツ</th>
-					<td class="suitably">C</td>
-					<td class="effect">
-						<ul>
-							<li><em>「晴れの日◯」</em> のヒント Lv+1</li>
-							<li>絆ゲージ +5</li>
-						</ul>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+			<table class="event-options">
+				<caption>
+					メラメラ・ファイアー！
+				</caption>
+				<thead>
+					<tr>
+						<th>選択肢</th>
+						<th>適正</th>
+						<th>効果</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>スタミナ定食を食べるのは？</th>
+						<td class="suitably">B</td>
+						<td class="effect">
+							<ul>
+								<li>スタミナ +10</li>
+								<li>絆ゲージ +5</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th>タイヤ引きで全力ダッシュは？</th>
+						<td class="suitably">A</td>
+						<td class="effect">
+							<ul>
+								<li>パワー +20</li>
+								<li><i class="bi bi-exclamation-triangle"></i> 体力 -10</li>
+								<li>絆ゲージ +5</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
 
-		<table class="event-options">
-			<caption>
-				メラメラ・ファイアー！
-			</caption>
-			<thead>
-				<tr>
-					<th>選択肢</th>
-					<th>適正</th>
-					<th>効果</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>スタミナ定食を食べるのは？</th>
-					<td class="suitably">B</td>
-					<td class="effect">
-						<ul>
-							<li>スタミナ +10</li>
-							<li>絆ゲージ +5</li>
-						</ul>
-					</td>
-				</tr>
-				<tr>
-					<th>タイヤ引きで全力ダッシュは？</th>
-					<td class="suitably">A</td>
-					<td class="effect">
-						<ul>
-							<li>パワー +20</li>
-							<li><i class="bi bi-exclamation-triangle"></i> 体力 -10</li>
-							<li>絆ゲージ +5</li>
-						</ul>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</article>
-
-	<script src="../support.js?version=20240301a"></script>
-</body>
-
+		<script src="../support.js?version=20240301a"></script>
+	</body>
 </html>
