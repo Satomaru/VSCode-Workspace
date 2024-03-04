@@ -1,52 +1,37 @@
-body.mile {
-	background-color: #efe;
+details {
+    width: 800px;
 }
 
-body.mile h1 {
-	border: outset 3px #cfc;
-	background-color: #cfc;
+table {
+    width: 100%;
 }
 
-div.race-schedule {
-	display: flex;
-	gap: 8px;
-	margin: 0 0 1em 1em;
+table.advance-skill {
+    width: 800px;
 }
 
-div.race-schedule img {
-	width: 372px;
-	height: 566px;
+table.advance-skill th {
+    white-space: nowrap;
+    width: 1em;
 }
 
-div.race-schedule tbody th {
-	text-align: right;
+.race-schedule img {
+    width: 372px;
+    height: 566px;
+    border: 2px outset #eee;
 }
 
-table.event-options {
-	width: 800px;
+.race-schedule tr :nth-child(-n + 2) {
+    white-space: nowrap;
+    width: 1em;
 }
 
-table.event-options tbody tr:nth-child(1) {
-	background-color: #ffd;
+.race-schedule tbody th {
+    text-align: right;
 }
 
-table.event-options tbody tr:nth-child(2) {
-	background-color: #fdf;
-}
-
-table.event-options tbody tr:nth-child(3) {
-	background-color: #dff;
-}
-
-table.event-options tbody th {
-	width: 20em;
-}
-
-table.event-options tbody td.suitably {
-	width: 2em;
-	font-size: 11pt;
-	text-align: center;
-	color: #00f;
-	text-decoration: underline 1px #00f;
-	cursor: pointer;
+.event-options tbody th {
+    text-align: left;
+    white-space: nowrap;
+    width: 1em;
 }

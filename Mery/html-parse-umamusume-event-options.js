@@ -1,8 +1,9 @@
 #title="[HTML] ウマ娘イベント選択肢作成"
 
 var lineParser = /^(\t{0,2})([^\t\r\n]*)[\r\n]*$/;
-var suitablyParser = /^(AA|A|B|C|D):(.+)$/;
 var propernounParser = /『(.+?)』/;
+var gainParser = /\s*(\+\d+)$/;
+var loseParser = /\s*(-\d+)$/;
 
 var context = {
 	line: "",
@@ -33,7 +34,6 @@ function writeTableBegin(context) {
 		"\t<thead>",
 		"\t\t<tr>",
 		"\t\t\t<th>選択肢</th>",
-		"\t\t\t<th>適正</th>",
 		"\t\t\t<th>効果</th>",
 		"\t\t</tr>",
 		"\t</thead>",
@@ -55,13 +55,8 @@ function writeOption(context) {
 		]);
 	}
 
-	var parsed = suitablyParser.exec(context.text);
-	var option = parsed ? parsed[2] : context.text;
-	var suitably = parsed ? parsed[1] : "";
-
 	writeHtml([
-		"\t\t\t<th>" + option + "</th>",
-		'\t\t\t<td class="suitably">' + suitably + "</td>",
+		"\t\t\t<th>" + context.text + "</th>",
 		'\t\t\t<td class="effect">',
 		"\t\t\t\t<ul>",
 	]);
@@ -78,6 +73,8 @@ function writeEffect(context) {
 		]);
 	} else {
 		var effect = context.text.replace(propernounParser, "<em>「$1」</em>");
+		effect = effect.replace(gainParser, ' <span class="gain">$1</span>');
+		effect = effect.replace(loseParser, ' <span class="lose">$1</span>');
 		effect = effect.replace("{!}", '<i class="bi bi-exclamation-triangle"></i>');
 
 		writeHtml([

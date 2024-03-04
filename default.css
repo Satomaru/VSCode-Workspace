@@ -1,153 +1,215 @@
 body {
-	margin: 1em 1em 4em 1em;
-	background-color: #eee;
-	font-size: 13px;
+    margin: 1em 1em 4em 1em;
+    background-color: #eee;
+    font-size: 13px;
 }
 
+/**** Header *****************************************************************/
+
 header {
-	margin: 0 0 2em 0;
+    margin: 0 0 32px 0;
+}
+
+header h1 {
+    max-width: 1024px;
+    margin: 0;
+    border: outset 3px #ddd;
+    padding: 4px 4px 4px 8px;
+    background-color: #ddd;
+    color: #000;
+    font-size: 32px;
+    line-height: 46px;
+    vertical-align: middle;
+}
+
+header h1 img {
+    width: 32px;
+    height: 32px;
+    vertical-align: -4px;
 }
 
 header nav {
-	margin: 4px 0 0 8px;
+    margin: 4px 0 0 8px;
 }
 
 header nav ol {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	display: flex;
-	gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 8px;
 }
 
 header nav li:nth-child(n + 2)::before {
-	padding-right: 8px;
-	content: ">";
+    padding-right: 8px;
+    content: ">";
 }
 
-h1 {
-	width: 800px;
-	margin: 0;
-	border: outset 3px #ddd;
-	padding: 4px 4px 4px 8px;
-	background-color: #ddd;
-	color: #000;
-	font-size: 32px;
-	line-height: 46px;
-	vertical-align: middle;
+/**** Section ****************************************************************/
+
+section {
+    margin: 32px 0 0 0;
 }
 
-h1 img {
-	width: 32px;
-	height: 32px;
-	vertical-align: -4px;
+section > :not(h2) {
+    margin-left: 16px;
 }
 
-h2 {
-	width: 640px;
-	margin: 0 0 1em 0;
-	border-bottom: double 3px #000;
-	padding: 0 0 0 4px;
-	font-size: 20px;
-	line-height: 27px;
+section h2 {
+    max-width: 800px;
+    margin: 0;
+    border-bottom: double 3px #000;
+    padding: 0 0 0 4px;
+    font-size: 20px;
+    line-height: 27px;
 }
 
-h2 img {
-	width: 20px;
-	height: 20px;
-	vertical-align: -2px;
+section h2 img {
+    width: 20px;
+    height: 20px;
+    vertical-align: -2px;
 }
 
-h3 {
-	margin: 0 0 1em 0;
-	padding: 0;
-	font-size: 15px;
-	line-height: 15px;
-}
-
-article {
-	margin: 0 0 2em 1em;
-}
-
-p {
-	margin: 0 0 1em 1em;
-}
-
-u {
-	text-decoration: underline double #f00;
-}
-
-em {
-	font-weight: bold;
-	font-style: normal;
-	color: #f44;
-}
-
-span.link {
-	color: #00f;
-	text-decoration: underline 1px #00f;
-	cursor: pointer;
-}
-
-ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-dialog {
-	min-width: 320px;
-	border: 1px solid #aa9;
-	border-radius: 4px;
-	padding: 8px;
-	background-color: #ffe;
-}
-
-dialog form {
-	margin-top: 16px;
-	display: flex;
-	flex-direction: row-reverse;
-	gap: 8px;
-}
-
-menu {
-	margin: 0 0 0 1em;
-	padding: 0;
-	list-style: none;
-}
-
-menu img {
-	width: 20px;
-	height: 20px;
-	vertical-align: -4px;
-}
+/**** Table ******************************************************************/
 
 table {
-	margin: 0 0 2em 0;
-	border: 2px solid #888;
-	empty-cells: show;
-	border-spacing: 0;
-	border-collapse: collapse;
+    margin: 16px 0 0 0;
+    border: 2px solid #888;
+    empty-cells: show;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
 
 caption {
-	font-size: 15px;
-	font-weight: bold;
-	text-align: left;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
 }
 
-th,
+th {
+    border: 1px solid #888;
+    padding: 4px 8px;
+}
+
 td {
-	border: 1px solid #888;
-	padding: 4px 8px;
+    border: 1px solid #888;
+    padding: 4px 8px;
+}
+
+td ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+td hr {
+    border: 1px dashed #888;
 }
 
 thead th {
-	background-color: #ea0;
-	color: #fff;
-	font-weight: normal;
+    background-color: #ea0;
+    color: #fff;
+    font-weight: normal;
+}
+
+tbody tr {
+    background-color: #fff;
 }
 
 tbody th {
-	font-weight: bold;
+    font-weight: bold;
+    text-align: left;
+}
+
+table.form tbody th {
+    background-color: #ea0;
+    color: #fff;
+    font-weight: normal;
+}
+
+/**** List **`****************************************************************/
+
+menu {
+    margin: 16px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+menu img {
+    width: 20px;
+    height: 20px;
+    vertical-align: -4px;
+}
+
+li.caution {
+    background-color: #ff8;
+}
+
+li.caution::before {
+    font-family: bootstrap-icons !important;
+    content: "\f33b\20";
+}
+
+/**** Block ******************************************************************/
+
+p {
+    margin: 16px 0 0 0;
+}
+
+details {
+    width: fit-content;
+    min-width: 320px;
+    margin: 16px 0 0 0;
+    border: 1px solid #888;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+}
+
+summary {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+dialog {
+    min-width: 320px;
+    border: 1px solid #aa9;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: #ffe;
+}
+
+dialog form {
+    margin: 16px 0 0 0;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
+}
+
+/**** Text *******************************************************************/
+
+u {
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: underline double #f00;
+}
+
+em {
+    font-weight: normal;
+    font-style: normal;
+    color: #f00;
+}
+
+span.link {
+    color: #00f;
+    text-decoration: underline 1px #00f;
+    cursor: pointer;
+}
+
+span.gain {
+    color: #00f;
+}
+
+span.lose {
+    color: #f00;
 }
