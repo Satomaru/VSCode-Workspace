@@ -4,6 +4,7 @@ var lineParser = /^(\t{0,2})([^\t\r\n]*)[\r\n]*$/;
 var propernounParser = /『(.+?)』/;
 var gainParser = /\s*(\+\d+)$/;
 var loseParser = /\s*(-\d+)$/;
+var classParser = /^\{(.)\}\s*(.+)$/;
 
 var context = {
 	line: "",
@@ -29,16 +30,16 @@ function writeTableBegin(context) {
 	}
 
 	writeHtml([
-		'<table class="event-options">',
-		"\t<caption>" + context.text + "</caption>",
-		"\t<thead>",
-		"\t\t<tr>",
-		"\t\t\t<th>選択肢</th>",
-		"\t\t\t<th>効果</th>",
-		"\t\t</tr>",
-		"\t</thead>",
-		"\t<tbody>",
-		"\t\t<tr>",
+		"<details>",
+		"\t<summary>" + context.text + "</summary>",
+		'\t<table class="fit1">',
+		"\t\t<thead>",
+		"\t\t\t<tr>",
+		"\t\t\t\t<th>選択肢</th>",
+		"\t\t\t\t<th>効果</th>",
+		"\t\t\t</tr>",
+		"\t\t</thead>",
+		"\t\t<tbody>",
 	]);
 
 	context.beganTable = true;
@@ -48,17 +49,17 @@ function writeTableBegin(context) {
 function writeOption(context) {
 	if (context.previousIndent === 1 || context.previousIndent === 2) {
 		writeHtml([
-			"\t\t\t\t</ul>",
-			"\t\t\t</td>",
-			"\t\t</tr>",
-			"\t\t<tr>",
+			"\t\t\t\t\t</ul>",
+			"\t\t\t\t</td>",
+			"\t\t\t</tr>",
 		]);
 	}
 
 	writeHtml([
-		"\t\t\t<th>" + context.text + "</th>",
-		'\t\t\t<td class="effect">',
-		"\t\t\t\t<ul>",
+		"\t\t\t<tr>",
+		"\t\t\t\t<th>" + context.text + "</th>",
+		'\t\t\t\t<td>',
+		"\t\t\t\t\t<ul>",
 	]);
 
 	context.previousIndent = 1;
@@ -67,18 +68,42 @@ function writeOption(context) {
 function writeEffect(context) {
 	if (/^--+$/.test(context.text)) {
 		writeHtml([
-			"\t\t\t\t</ul>",
-			"\t\t\t\t<hr>",
-			"\t\t\t\t<ul>",
+			"\t\t\t\t\t</ul>",
+			"\t\t\t\t\t<hr>",
+			"\t\t\t\t\t<ul>",
 		]);
 	} else {
 		var effect = context.text.replace(propernounParser, "<em>「$1」</em>");
 		effect = effect.replace(gainParser, ' <span class="gain">$1</span>');
 		effect = effect.replace(loseParser, ' <span class="lose">$1</span>');
-		effect = effect.replace("{!}", '<i class="bi bi-exclamation-triangle"></i>');
+
+		var tag = "";
+		var classMatcher = classParser.exec(effect);
+
+		if (classMatcher) {
+			var className;
+
+			switch (classMatcher[1]) {
+				case "*":
+					className = "recommendation";
+					break
+
+				case "!":
+					className = "caution";
+					break
+
+				default:
+					className = "parse-error";
+			}
+
+			tag = '<li class="' + className + '">';
+			effect = classMatcher[2];
+		} else {
+			tag = "<li>";
+		}
 
 		writeHtml([
-			"\t\t\t\t\t<li>" + effect + "</li>",
+			"\t\t\t\t\t\t" + tag + effect + "</li>",
 		]);
 	}
 
@@ -90,15 +115,16 @@ function writeTableEnd(context) {
 		case 2:
 		case 1:
 			writeHtml([
-				"\t\t\t\t</ul>",
-				"\t\t\t</td>",
+				"\t\t\t\t\t</ul>",
+				"\t\t\t\t</td>",
+				"\t\t\t</tr>",
 			]);
 
 		default:
 			writeHtml([
-				"\t\t</tr>",
-				"\t</tbody>",
-				"</table>",
+				"\t\t</tbody>",
+				"\t</table>",
+				"</details>",
 				"",
 			]);
 	}
