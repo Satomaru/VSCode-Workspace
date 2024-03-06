@@ -1,5 +1,16 @@
+@media screen and (min-width: 1024px) {
+    body {
+        width: 992px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    body {
+        width: 100vw;
+    }
+}
+
 body {
-    max-width: 992px;
     margin: 0;
     padding: 8px 8px 32px 8px;
     background-color: #eee;
