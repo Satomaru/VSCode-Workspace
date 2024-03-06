@@ -133,12 +133,13 @@ menu {
     margin: 16px 0 0 0;
     padding: 0;
     list-style: none;
+    font-size: 18px;
 }
 
 menu img {
     width: 20px;
     height: 20px;
-    vertical-align: -4px;
+    vertical-align: -3px;
 }
 
 li.recommendation {
