@@ -1,37 +1,19 @@
-details {
-    width: 800px;
-}
-
-table {
+#race-schedule table {
     width: 100%;
 }
 
-table.advance-skill {
-    width: 800px;
-}
-
-table.advance-skill th {
-    white-space: nowrap;
-    width: 1em;
-}
-
-.race-schedule img {
-    width: 372px;
-    height: 566px;
-    border: 2px outset #eee;
-}
-
-.race-schedule tr :nth-child(-n + 2) {
-    white-space: nowrap;
-    width: 1em;
-}
-
-.race-schedule tbody th {
+#race-schedule tbody th {
     text-align: right;
 }
 
-.event-options tbody th {
+#advance-skill table {
+    width: 800px;
+}
+
+#event-options table {
+    width: 100%;
+}
+
+#event-options tbody th {
     text-align: left;
-    white-space: nowrap;
-    width: 1em;
 }

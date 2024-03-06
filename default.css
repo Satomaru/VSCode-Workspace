@@ -1,7 +1,11 @@
 body {
-    margin: 1em 1em 4em 1em;
+    max-width: 992px;
+    margin: 0;
+    padding: 8px 8px 32px 8px;
     background-color: #eee;
+    font-family: sans-serif;
     font-size: 13px;
+    color: #444;
 }
 
 /**** Header *****************************************************************/
@@ -11,12 +15,10 @@ header {
 }
 
 header h1 {
-    max-width: 1024px;
     margin: 0;
     border: outset 3px #ddd;
     padding: 4px 4px 4px 8px;
     background-color: #ddd;
-    color: #000;
     font-size: 32px;
     line-height: 46px;
     vertical-align: middle;
@@ -52,7 +54,7 @@ section {
 }
 
 section > :not(h2) {
-    margin-left: 16px;
+    margin-left: 8px;
 }
 
 section h2 {
@@ -78,6 +80,7 @@ table {
     empty-cells: show;
     border-spacing: 0;
     border-collapse: collapse;
+    background-color: #fff;
 }
 
 caption {
@@ -86,11 +89,7 @@ caption {
     text-align: left;
 }
 
-th {
-    border: 1px solid #888;
-    padding: 4px 8px;
-}
-
+th,
 td {
     border: 1px solid #888;
     padding: 4px 8px;
@@ -106,14 +105,11 @@ td hr {
     border: 1px dashed #888;
 }
 
-thead th {
+thead th,
+table.form tbody th {
     background-color: #ea0;
     color: #fff;
     font-weight: normal;
-}
-
-tbody tr {
-    background-color: #fff;
 }
 
 tbody th {
@@ -121,10 +117,14 @@ tbody th {
     text-align: left;
 }
 
-table.form tbody th {
-    background-color: #ea0;
-    color: #fff;
-    font-weight: normal;
+table.fit1 tr > :first-child {
+    white-space: nowrap;
+    width: 1em;
+}
+
+table.fit2 tr > :nth-child(2) {
+    white-space: nowrap;
+    width: 1em;
 }
 
 /**** List **`****************************************************************/
@@ -139,6 +139,15 @@ menu img {
     width: 20px;
     height: 20px;
     vertical-align: -4px;
+}
+
+li.recommendation {
+    background-color: #cfc;
+}
+
+li.recommendation::before {
+    font-family: bootstrap-icons !important;
+    content: "\f588\20";
 }
 
 li.caution {
@@ -156,34 +165,36 @@ p {
     margin: 16px 0 0 0;
 }
 
+img.landscape,
+img.portrait {
+    border: 2px outset #eee;
+}
+
+img.landscape.ipad-mini {
+    width: 566px;
+    height: 372px;
+}
+
+img.portrait.ipad-mini {
+    width: 372px;
+    height: 566px;
+}
+
 details {
-    width: fit-content;
-    min-width: 320px;
     margin: 16px 0 0 0;
     border: 1px solid #888;
     border-radius: 8px;
-    padding: 16px;
+    padding: 8px;
+    background-color: #ddd;
+}
+
+details[open] {
     background-color: #fff;
 }
 
 summary {
     font-size: 15px;
     font-weight: bold;
-}
-
-dialog {
-    min-width: 320px;
-    border: 1px solid #aa9;
-    border-radius: 4px;
-    padding: 8px;
-    background-color: #ffe;
-}
-
-dialog form {
-    margin: 16px 0 0 0;
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 8px;
 }
 
 /**** Text *******************************************************************/

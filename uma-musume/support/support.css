@@ -1,13 +1,7 @@
-details {
-    width: 800px;
-}
-
-table {
+#event-options table {
     width: 100%;
 }
 
-.event-options tbody th {
+#event-options tbody th {
     text-align: left;
-    white-space: nowrap;
-    width: 1em;
 }
