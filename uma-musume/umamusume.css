@@ -1,0 +1,115 @@
+b.speed::before {
+    background-image: url("images/speed.png");
+}
+
+b.stamina::before {
+    background-image: url("images/stamina.png");
+}
+
+b.power::before {
+    background-image: url("images/power.png");
+}
+
+b.guts::before {
+    background-image: url("images/guts.png");
+}
+
+b.intelligence::before {
+    background-image: url("images/intelligence.png");
+}
+
+img.speed {
+    content: url("images/speed.png");
+}
+
+.event::before {
+    content: "イベント「";
+}
+
+.event::after {
+    content: "」";
+}
+
+.skill::before {
+    content: "スキル「";
+}
+
+.skill::after {
+    content: "」";
+}
+
+.skill.rank1::before {
+    content: "スキル★1「";
+}
+
+.skill.rank2::before {
+    content: "スキル★2「";
+}
+
+.skill.rank3::before {
+    content: "スキル★3「";
+}
+
+.skill.rank4::before {
+    content: "スキル★4「";
+}
+
+.skill.rank5::before {
+    content: "スキル★5「";
+}
+
+.skill.lead::after {
+    content: "」(逃げ) ";
+}
+
+.skill.front::after {
+    content: "」(先行) ";
+}
+
+.skill.front-looker::after {
+    content: "」(先行/差し) ";
+}
+
+.skill.looker::after {
+    content: "」(差し) ";
+}
+
+.skill.closer::after {
+    content: "」(追込) ";
+}
+
+.skill.sprint::after {
+    content: "」(短距離) ";
+}
+
+.skill.sprint-mile::after {
+    content: "」(短距離/マイル) ";
+}
+
+.skill.mile::after {
+    content: "」(マイル) ";
+}
+
+.skill.mile-classic::after {
+    content: "」(マイル/中距離) ";
+}
+
+.skill.classic::after {
+    content: "」(中距離) ";
+}
+
+.skill.classic-long::after {
+    content: "」(中/長距離) ";
+}
+
+.skill.long::after {
+    content: "」(長距離) ";
+}
+
+.status::before {
+    content: "ステータス「";
+}
+
+.status::after {
+    content: "」";
+}

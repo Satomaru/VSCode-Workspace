@@ -8,16 +8,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 	<link rel="stylesheet" href="../../../default.css?version=20240307a" />
+	<link rel="stylesheet" href="../../umamusume.css?version=20240307a" />
 	<link rel="stylesheet" href="../training.css?version=20240307a" />
+	<link rel="stylesheet" href="mile.css?version=20240307a" />
+	<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
 </head>
 
 <body>
 	<header>
-		<h1>
-			<img src="../../images/mile.png" alt="マイル" />
-			<img src="../../images/先行.svg" alt="先行" />
-			オグリキャップ
-		</h1>
+		<h1><img class="distance" /> <img class="front" /> オグリキャップ</h1>
+
 		<nav>
 			<ol>
 				<li><a href="../../../">さとまるのメモ帳</a></li>
@@ -48,7 +48,7 @@
 					<tr>
 						<th>12月 後半</th>
 						<td>ホープフルステークス</td>
-						<td><em>目標2</em> の達成</td>
+						<td>目標 2 の達成</td>
 					</tr>
 				</tbody>
 			</table>
@@ -81,7 +81,7 @@
 					<tr>
 						<th>10月 後半</th>
 						<td>菊花賞</td>
-						<td>クラシック三冠、イベント<em>「これからも、みんなと」</em>発生条件</td>
+						<td>クラシック三冠、<span class="event">これからも、みんなと</span>発生条件</td>
 					</tr>
 				</tbody>
 			</table>
@@ -104,17 +104,17 @@
 					<tr>
 						<th>3月 後半</th>
 						<td>大阪杯</td>
-						<td>春シニア三冠、イベント<em>「これからも、みんなと」</em>発生条件</td>
+						<td>春シニア三冠、<span class="event">これからも、みんなと</span>発生条件</td>
 					</tr>
 					<tr>
 						<th>4月 後半</th>
 						<td>天皇賞(春)</td>
-						<td>春シニア三冠、イベント<em>「これからも、みんなと」</em>発生条件</td>
+						<td>春シニア三冠、<span class="event">これからも、みんなと</span>発生条件</td>
 					</tr>
 					<tr>
 						<th>6月 前半</th>
 						<td>安田記念</td>
-						<td>スキル★5<em>「怪物的コーナリング」</em>進化条件</td>
+						<td><span class="skill">怪物的コーナリング</span>進化条件</td>
 					</tr>
 					<tr>
 						<th>6月 後半</th>
@@ -135,13 +135,17 @@
 		<h2>進化スキル</h2>
 
 		<table class="form fit1">
-			<caption>★5 食いしん坊 → ★4 笠松の食いしん坊</caption>
+			<caption>
+				<span class="skill">食いしん坊</span>
+				→
+				<span class="skill">笠松の食いしん坊</span>
+			</caption>
 			<tbody>
 				<tr>
 					<th>条件 1</th>
 					<td>
 						<ul>
-							<li>イベント「オグリの大食い選手権」で、「食って食って……全てを食い尽くせ！」を選択する</li>
+							<li><span class="event">オグリの大食い選手権</span>で、「食って食って……全てを食い尽くせ！」を選択する</li>
 							<li>有馬記念を、クラシック級・シニア級ともに勝利する</li>
 						</ul>
 					</td>
@@ -150,7 +154,11 @@
 		</table>
 
 		<table class="form fit1">
-			<caption>★5 食いしん坊 → ★5 飢えた怪物</caption>
+			<caption>
+				<span class="skill">食いしん坊</span>
+				→
+				<span class="skill">飢えた怪物</span>
+			</caption>
 			<tbody>
 				<tr>
 					<th>条件 1</th>
@@ -165,7 +173,11 @@
 		</table>
 
 		<table class="form fit1">
-			<caption>★5 曲線のソムリエ → ★5 怪物的コーナーリング</caption>
+			<caption>
+				<span class="skill">曲線のソムリエ</span>
+				→
+				<span class="skill">怪物的コーナリング</span>
+			</caption>
 			<tbody>
 				<tr>
 					<th>条件 1</th>
@@ -215,7 +227,7 @@
 								<li>スキルPt <span class="gain">+10</span></li>
 								<li class="caution">スピード <span class="lose">-5</span></li>
 								<li>パワー <span class="gain">+5</span></li>
-								<li class="caution">ステータス<em>「太り気味」</em>になる</li>
+								<li class="caution"><span class="status">太り気味</span>になる</li>
 							</ul>
 						</td>
 					</tr>
@@ -233,19 +245,19 @@
 						<th>食って食って……全てを食い尽くせ！</th>
 						<td>
 							<ul>
-								<li>スキル★4<em>「笠松の食いしん坊」</em>の進化条件で、有馬記念の勝利が不要になる</li>
+								<li><span class="skill">笠松の食いしん坊</span>の進化条件で、有馬記念の勝利が不要になる</li>
 								<li>体力 <span class="gain">+100</span></li>
 								<li>パワー <span class="gain">+20</span></li>
 								<li>スキルPt <span class="gain">+20</span></li>
 							</ul>
 							<hr>
 							<ul>
-								<li>スキル★4<em>「笠松の食いしん坊」</em>の進化条件で、有馬記念の勝利が不要になる</li>
+								<li><span class="skill">笠松の食いしん坊</span>の進化条件で、有馬記念の勝利が不要になる</li>
 								<li>体力 <span class="gain">+100</span></li>
 								<li class="caution">スピード <span class="lose">-20</span></li>
 								<li>パワー <span class="gain">+20</span></li>
 								<li>スキルPt <span class="gain">+20</span></li>
-								<li class="caution">ステータス<em>「太り気味」</em>になる</li>
+								<li class="caution"><span class="status">太り気味</span>になる</li>
 							</ul>
 						</td>
 					</tr>
@@ -306,7 +318,7 @@
 						<th>レースもグルメも楽しもう！</th>
 						<td>
 							<ul>
-								<li>スキル★1<em>「中山レース場◯」</em>ヒントLv <span class="gain">+1</span></li>
+								<li><span class="skill">中山レース場◯</span>ヒントLv <span class="gain">+1</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -346,7 +358,7 @@
 								<li>スキルPt <span class="gain">+10</span></li>
 								<li class="caution">スピード <span class="lose">-5</span></li>
 								<li>パワー <span class="gain">+5</span></li>
-								<li class="caution">ステータス<em>「太り気味」</em>になる</li>
+								<li class="caution"><span class="status">太り気味</em>になる</li>
 							</ul>
 						</td>
 					</tr>
@@ -568,7 +580,7 @@
 							<ul>
 								<li class="caution">やる気 <span class="lose">-1</span></li>
 								<li class="caution">対象ステータス <span class="lose">-5</span></li>
-								<li class="caution">ステータス<em>「練習下手」</em>になる (ランダム)</li>
+								<li class="caution"><span class="status">練習下手</span>になる (ランダム)</li>
 							</ul>
 						</td>
 					</tr>
@@ -579,11 +591,11 @@
 								<li class="caution">やる気 <span class="lose">-1</span></li>
 								<li class="caution">対象ステータス <span class="lose">-10</span>
 								</li>
-								<li class="caution">ステータス<em>「練習下手」</em>になる (ランダム)</li>
+								<li class="caution"><span class="status">練習下手</span>になる (ランダム)</li>
 							</ul>
 							<hr>
 							<ul>
-								<li class="recommendation">ステータス<em>「練習上手◯」</em>になる</li>
+								<li class="recommendation"><span class="status">練習上手◯</em>になる</li>
 							</ul>
 						</td>
 					</tr>
@@ -611,7 +623,7 @@
 								</li>
 								<li class="caution">2種ステータス <span class="lose">-10</span>
 								</li>
-								<li class="caution">ステータス<em>「練習ベタ」</em>になる (ランダム)</li>
+								<li class="caution"><span class="status">練習下手</span>になる (ランダム)</li>
 							</ul>
 						</td>
 					</tr>
@@ -624,12 +636,12 @@
 								</li>
 								<li class="caution">2種ステータス <span class="lose">-10</span>
 								</li>
-								<li class="caution">ステータス<em>「練習ベタ」</em>になる</li>
+								<li class="caution"><span class="status">練習下手</span>になる</li>
 							</ul>
 							<hr>
 							<ul>
 								<li>体力 <span class="gain">+10</span></li>
-								<li class="recommendation">ステータス<em>「練習上手◯」</em>になる</li>
+								<li class="recommendation"><span class="status">練習上手◯</em>になる</li>
 							</ul>
 						</td>
 					</tr>
@@ -652,7 +664,7 @@
 						<td>
 							<ul>
 								<li>根性 <span class="gain">+20</span></li>
-								<li class="recommendation">ステータス<em>「注目株」</em>になる (ランダム)</li>
+								<li class="recommendation"><span class="status">注目株</span>になる (ランダム)</li>
 							</ul>
 						</td>
 					</tr>
@@ -661,7 +673,7 @@
 						<td>
 							<ul>
 								<li>スタミナ <span class="gain">+20</span></li>
-								<li class="recommendation">ステータス<em>「注目株」</em>になる (ランダム)</li>
+								<li class="recommendation"><span class="status">注目株</span>になる (ランダム)</li>
 							</ul>
 						</td>
 					</tr>
@@ -729,6 +741,8 @@
 				</tbody>
 			</table>
 		</details>
+
+		<script src="../../skill.js"></script>
 	</section>
 </body>
 

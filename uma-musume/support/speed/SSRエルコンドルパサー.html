@@ -8,15 +8,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 	<link rel="stylesheet" href="../../../default.css?version=20240307a" />
+	<link rel="stylesheet" href="../../umamusume.css?version=20240307a" />
 	<link rel="stylesheet" href="../support.css?version=20240307a" />
+	<link rel="stylesheet" href="speed.css?version=20240307a" />
+	<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
 </head>
 
-<body class="speed">
+<body>
 	<header>
-		<h1>
-			<img src="../../images/speed.png" alt="スピード" />
-			SSR エルコンドルパサー
-		</h1>
+		<h1><img class="support" /> SSR エルコンドルパサー</h1>
 
 		<nav>
 			<ol>
@@ -45,15 +45,17 @@
 						<th>新しい激辛メニューを開発するのはどう？</th>
 						<td>
 							<ul>
-								<li>スピード <span class="gain">+15</span></li>
-								<li class="recommendation">中距離スキル★4<em>「テンポアップ」</em>ヒントLv <span class="gain">+3</span>
+								<li><b class="speed">スピード</b> <span class="gain">+15</span></li>
+								<li class="recommendation">
+									<span class="skill">テンポアップ</span>ヒントLv <span class="gain">+3</span>
 								</li>
 								<li>絆ゲージ <span class="gain">+15</span></li>
 							</ul>
 							<hr />
 							<ul>
-								<li>スピード <span class="gain">+5</span></li>
-								<li class="recommendation">中距離スキル★4<em>「テンポアップ」</em>ヒントLv <span class="gain">+1</span>
+								<li><b class="speed">スピード</b> <span class="gain">+5</span></li>
+								<li class="recommendation">
+									<span class="skill">テンポアップ</span>ヒントLv <span class="gain">+1</span>
 								</li>
 								<li>絆ゲージ <span class="gain">+5</span></li>
 							</ul>
@@ -87,19 +89,19 @@
 						<th>『凱旋門賞』の先を見てるなんて……</th>
 						<td>
 							<ul>
-								<li>スピード <span class="gain">+20</span></li>
-								<li>スタミナ <span class="gain">+20</span></li>
+								<li><b class="speed">スピード</b> <span class="gain">+20</span></li>
+								<li><b class="stamina">スタミナ</b> <span class="gain">+20</span></li>
 								<li class="recommendation">
-									先行/差しスキル★4<em>「王手」</em>ヒントLv <span class="gain">+3</span>
+									<span class="skill">王手</span>ヒントLv <span class="gain">+3</span>
 								</li>
 								<li>絆ゲージ <span class="gain">+5</span></li>
 							</ul>
 							<hr />
 							<ul>
-								<li>スピード <span class="gain">+10</span></li>
-								<li>スタミナ <span class="gain">+5</span></li>
+								<li><b class="speed">スピード</b> <span class="gain">+10</span></li>
+								<li><b class="stamina">スタミナ</b> <span class="gain">+5</span></li>
 								<li class="recommendation">
-									先行/差しスキル★4<em>「王手」</em>ヒントLv <span class="gain">+1</span>
+									<span class="skill">王手</span>ヒントLv <span class="gain">+1</span>
 								</li>
 								<li>絆ゲージ <span class="gain">+5</span></li>
 							</ul>
@@ -109,20 +111,20 @@
 						<th>徹底した準備の大切さを実感した</th>
 						<td>
 							<ul>
-								<li>スピード <span class="gain">+10</span></li>
-								<li>スタミナ <span class="gain">+10</span></li>
+								<li><b class="speed">スピード</b> <span class="gain">+10</span></li>
+								<li><b class="stamina">スタミナ</b> <span class="gain">+10</span></li>
 								<li class="recommendation">
-									スキル★5<em>「弧線のプロフェッサー」</em>ヒントLv <span class="gain">+3</span>
+									<span class="skill">弧線のプロフェッサー</span>ヒントLv <span class="gain">+3</span>
 								</li>
 								<li>体力 <span class="gain">+10</span></li>
 								<li>絆ゲージ <span class="gain">+5</span></li>
 							</ul>
 							<hr />
 							<ul>
-								<li>スピード <span class="gain">+5</span></li>
-								<li>スタミナ <span class="gain">+5</span></li>
+								<li><b class="speed">スピード</b> <span class="gain">+5</span></li>
+								<li><b class="stamina">スタミナ</b> <span class="gain">+5</span></li>
 								<li class="recommendation">
-									スキル★5<em>「弧線のプロフェッサー」</em>ヒントLv <span class="gain">+1</span>
+									<span class="skill">弧線のプロフェッサー</span>ヒントLv <span class="gain">+1</span>
 								</li>
 								<li>体力 <span class="gain">+5</span></li>
 								<li>絆ゲージ <span class="gain">+5</span></li>
@@ -147,7 +149,7 @@
 						<th>エル流パワートレメニュー</th>
 						<td>
 							<ul>
-								<li>パワー <span class="gain">+10</span></li>
+								<li><b class="power">パワー</b> <span class="gain">+10</span></li>
 								<li>絆ゲージ <span class="gain">+5</span></li>
 							</ul>
 						</td>
@@ -156,7 +158,9 @@
 						<th>晴れたレースで走るコツ</th>
 						<td>
 							<ul>
-								<li class="recommendation">スキル★4<em>「晴れの日◯」</em>ヒントLv <span class="gain">+1</span></li>
+								<li class="recommendation">
+									<span class="skill">晴れの日◯</span>ヒントLv <span class="gain">+1</span>
+								</li>
 								<li>絆ゲージ <span class="gain">+5</span></li>
 							</ul>
 						</td>
@@ -179,7 +183,7 @@
 						<th>スタミナ定食を食べるのは？</th>
 						<td>
 							<ul>
-								<li>スタミナ <span class="gain">+10</span></li>
+								<li><b class="stamina">スタミナ</b> <span class="gain">+10</span></li>
 								<li>絆ゲージ <span class="gain">+5</span></li>
 							</ul>
 						</td>
@@ -188,7 +192,7 @@
 						<th>タイヤ引きで全力ダッシュは？</th>
 						<td>
 							<ul>
-								<li>パワー <span class="gain">+20</span></li>
+								<li><b class="power">パワー</b> <span class="gain">+20</span></li>
 								<li>体力 <span class="lose">-10</span></li>
 								<li>絆ゲージ <span class="gain">+5</span></li>
 							</ul>
@@ -197,6 +201,8 @@
 				</tbody>
 			</table>
 		</details>
+
+		<script src="../../skill.js"></script>
 	</section>
 </body>
 

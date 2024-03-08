@@ -205,6 +205,21 @@ summary {
 
 /**** Text *******************************************************************/
 
+b {
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+b::before {
+    display: inline-block;
+    content: " ";
+    width: 1em;
+    height: 1em;
+    margin-right: 2px;
+    background-size: contain;
+    vertical-align: middle;
+}
+
 u {
     font-weight: normal;
     font-style: normal;
