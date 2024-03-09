@@ -1,144 +1,141 @@
 <!DOCTYPE html>
 
 <html lang="ja">
+	<head>
+		<title>友人 SSR 都留岐涼花</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+		<link rel="stylesheet" href="../../../default.css?version=20240307a" />
+		<link rel="stylesheet" href="../../umamusume.css?version=20240307a" />
+		<link rel="stylesheet" href="../support.css?version=20240307a" />
+		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
+	</head>
 
-<head>
-	<title>友人 SSR 都留岐涼花</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-	<link rel="stylesheet" href="../../../default.css?version=20240307a" />
-	<link rel="stylesheet" href="../../umamusume.css?version=20240307a" />
-	<link rel="stylesheet" href="../support.css?version=20240307a" />
-	<link rel="stylesheet" href="friend.css?version=20240307a" />
-	<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
-</head>
+	<body>
+		<header>
+			<h1><img class="friend" /> SSR 都留岐涼花</h1>
 
-<body>
-	<header>
-		<h1><img class="support" /> SSR 都留岐涼花</h1>
+			<nav>
+				<ol>
+					<li><a href="../../../">さとまるのメモ帳</a></li>
+					<li><a href="../../">ウマ娘</a></li>
+					<li><a href="../">サポート</a></li>
+					<li>友人 SSR 都留岐涼花</li>
+				</ol>
+			</nav>
+		</header>
 
-		<nav>
-			<ol>
-				<li><a href="../../../">さとまるのメモ帳</a></li>
-				<li><a href="../../">ウマ娘</a></li>
-				<li><a href="../">サポート</a></li>
-				<li>友人 SSR 都留岐涼花</li>
-			</ol>
-		</nav>
-	</header>
+		<section id="event-options">
+			<h2>イベント選択肢</h2>
 
-	<section id="event-options">
-		<h2>イベント選択肢</h2>
+			<details>
+				<summary>撃ち抜いたのは……</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>ボスに攻撃する！</th>
+							<td>
+								<ul>
+									<li>体力の最大値 <span class="gain">+4</span></li>
+									<li>体力 <span class="gain">+20 ～ +32</span></li>
+									<li>やる気 <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+									<li class="recommendation">お出かけができるようになる</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>都留岐涼花の回復に向かう</th>
+							<td>
+								<ul>
+									<li><img class="stamina" /> スタミナ <span class="gain">+30 ～ +37</span></li>
+									<li><img class="power" /> パワー <span class="gain">+30 ～ +37</span></li>
+									<li><span class="skill">対抗意識◯</span>ヒントLv <span class="gain">+5</span></li>
+									<li class="caution">絆 <span class="lose">-5</span></li>
+									<li class="caution">お出かけができなくなる</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
 
-		<details>
-			<summary>撃ち抜いたのは……</summary>
-			<table class="fit1">
-				<thead>
-					<tr>
-						<th>選択肢</th>
-						<th>効果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>ボスに攻撃する！</th>
-						<td>
-							<ul>
-								<li>体力の最大値 <span class="gain">+4</span></li>
-								<li>体力 <span class="gain">+20 ～ +32</span></li>
-								<li>やる気 <span class="gain">+1</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-								<li class="recommendation">お出かけができるようになる</li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>都留岐涼花の回復に向かう</th>
-						<td class="effect">
-							<ul>
-								<li><b class="stamina">スタミナ</b> <span class="gain">+30 ～ +37</span></li>
-								<li><b class="power">パワー</b> <span class="gain">+30 ～ +37</span></li>
-								<li><span class="skill">対抗意識◯</span> <span class="gain">+5</span></li>
-								<li class="caution">絆ゲージ <span class="lose">-5</span></li>
-								<li class="caution">お出かけができなくなる</li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</details>
+			<details>
+				<summary>貴方の胸にも灯を</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>すごくカワイイカリスマがいて……</th>
+							<td>
+								<ul>
+									<li>体力 <span class="gain">+50 ～ +80</span></li>
+									<li>やる気 <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+									<li>全競技Lv <span class="gain">+1</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>センスが爆発している子がいて……</th>
+							<td>
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+45 ～ +56</span></li>
+									<li>やる気 <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+									<li>全競技Lv <span class="gain">+1</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
 
-		<details>
-			<summary>貴方の胸にも灯を</summary>
-			<table class="fit1">
-				<thead>
-					<tr>
-						<th>選択肢</th>
-						<th>効果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>すごくカワイイカリスマがいて……</th>
-						<td>
-							<ul>
-								<li>体力 <span class="gain">+50 ～ +80</span></li>
-								<li>やる気 <span class="gain">+1</span></li>
-								<li>すべての競技Lv <span class="gain">+1</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>センスが爆発している子がいて……</th>
-						<td>
-							<ul>
-								<li><b class="speed">スピード</b> <span class="gain">+45 ～ +56</span></li>
-								<li>やる気 <span class="gain">+1</span></li>
-								<li>すべての競技Lv <span class="gain">+1</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</details>
+			<details>
+				<summary>忙しいは楽しい！</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>栄養バランスのいいレシピの料理動画</th>
+							<td>
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+15 ～ +18</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>テーマパークの動画</th>
+							<td>
+								<ul>
+									<li>体力 <span class="gain">+15 ～ +24</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
 
-		<details>
-			<summary>忙しいは楽しい！</summary>
-			<table class="fit1">
-				<thead>
-					<tr>
-						<th>選択肢</th>
-						<th>効果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>栄養バランスのいいレシピの料理動画</th>
-						<td>
-							<ul>
-								<li><b class="speed">スピード</b> <span class="gain">+15 ～ +18</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>テーマパークの動画</th>
-						<td>
-							<ul>
-								<li>体力 <span class="gain">+15 ～ +24</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</details>
-
-		<script src="../../skill.js"></script>
-	</section>
-</body>
-
+			<script src="../../skill.js"></script>
+		</section>
+	</body>
 </html>

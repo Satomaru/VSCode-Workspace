@@ -1,247 +1,238 @@
 @media screen and (min-width: 1024px) {
-    body {
-        width: 1008px;
-    }
+	body {
+		width: 1008px;
+	}
 }
 
 body {
-    margin: 0;
-    padding: 8px 8px 32px 8px;
-    background-color: #eee;
-    font-family: sans-serif;
-    font-size: 13px;
-    color: #444;
+	margin: 0;
+	padding: 8px 8px 32px 8px;
+	background-color: #eee;
+	font-family: sans-serif;
+	font-size: 13px;
+	color: #444;
 }
 
 /**** Header *****************************************************************/
 
 header {
-    margin: 0 0 32px 0;
+	margin: 0 0 32px 0;
 }
 
 header h1 {
-    margin: 0;
-    border: outset 3px #ddd;
-    padding: 4px 4px 4px 8px;
-    background-color: #ddd;
-    font-size: 32px;
-    line-height: 46px;
-    vertical-align: middle;
+	margin: 0;
+	border: outset 3px #ddd;
+	padding: 4px 4px 4px 8px;
+	background-color: #ddd;
+	font-size: 32px;
+	line-height: 46px;
+	vertical-align: middle;
 }
 
 header h1 img {
-    width: 32px;
-    height: 32px;
-    vertical-align: -4px;
+	width: 32px;
+	height: 32px;
+	vertical-align: -4px;
 }
 
 header nav {
-    margin: 4px 0 0 8px;
+	margin: 4px 0 0 8px;
 }
 
 header nav ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 8px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	gap: 8px;
 }
 
 header nav li:nth-child(n + 2)::before {
-    padding-right: 8px;
-    content: ">";
+	padding-right: 8px;
+	content: ">";
 }
 
 /**** Section ****************************************************************/
 
 section {
-    margin: 32px 0 0 0;
+	margin: 32px 0 0 0;
 }
 
 section > :not(h2) {
-    margin-left: 8px;
+	margin-left: 8px;
 }
 
 section h2 {
-    max-width: 800px;
-    margin: 0;
-    border-bottom: double 3px #000;
-    padding: 0 0 0 4px;
-    font-size: 20px;
-    line-height: 27px;
+	max-width: 800px;
+	margin: 0;
+	border-bottom: double 3px #000;
+	padding: 0 0 0 4px;
+	font-size: 20px;
+	line-height: 27px;
 }
 
 section h2 img {
-    width: 20px;
-    height: 20px;
-    vertical-align: -2px;
+	width: 20px;
+	height: 20px;
+	vertical-align: -2px;
 }
 
 /**** Table ******************************************************************/
 
 table {
-    margin: 16px 0 0 0;
-    border: 2px solid #888;
-    empty-cells: show;
-    border-spacing: 0;
-    border-collapse: collapse;
-    background-color: #fff;
+	margin: 16px 0 0 0;
+	border: 2px solid #888;
+	empty-cells: show;
+	border-spacing: 0;
+	border-collapse: collapse;
+	background-color: #fff;
 }
 
 caption {
-    font-size: 15px;
-    font-weight: bold;
-    text-align: left;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: left;
 }
 
 th,
 td {
-    border: 1px solid #888;
-    padding: 4px 8px;
-}
-
-td ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+	border: 1px solid #888;
+	padding: 4px 8px;
 }
 
 td hr {
-    border: 1px dashed #888;
+	border: 1px dashed #888;
 }
 
 thead th,
 table.form tbody th {
-    background-color: #ea0;
-    color: #fff;
-    font-weight: normal;
+	background-color: #ea0;
+	color: #fff;
+	font-weight: normal;
 }
 
 tbody th {
-    font-weight: bold;
-    text-align: left;
+	font-weight: bold;
+	text-align: left;
 }
 
 table.fit1 tr > :first-child {
-    white-space: nowrap;
-    width: 1em;
+	white-space: nowrap;
+	width: 1em;
 }
 
 table.fit2 tr > :nth-child(2) {
-    white-space: nowrap;
-    width: 1em;
+	white-space: nowrap;
+	width: 1em;
 }
 
-/**** List **`****************************************************************/
+/**** List *******************************************************************/
 
 menu {
-    margin: 16px 0 0 0;
-    padding: 0;
-    list-style: none;
-    font-size: 18px;
+	margin: 16px 0 0 0;
+	padding: 0;
+	list-style: none;
+	font-size: 18px;
 }
 
-menu img {
-    width: 20px;
-    height: 20px;
-    vertical-align: -3px;
+ul {
+	margin: 0 0 0 1em;
+	padding: 0;
 }
 
-li.recommendation {
-    background-color: #cfc;
+ul li {
+	padding-left: 2px;
 }
 
-li.recommendation::before {
-    font-family: bootstrap-icons !important;
-    content: "\f417\20";
+ul li::marker {
+	font-family: bootstrap-icons !important;
+	content: " ";
+	text-align: end;
 }
 
-li.caution {
-    background-color: #ff8;
+ul li.recommendation {
+	background-color: #cfc;
 }
 
-li.caution::before {
-    font-family: bootstrap-icons !important;
-    content: "\f33b\20";
+ul li.recommendation::marker {
+	content: "\f417";
+}
+
+ul li.caution {
+	background-color: #ff8;
+}
+
+ul li.caution::marker {
+	content: "\f33b";
+}
+
+li img {
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.1em;
 }
 
 /**** Block ******************************************************************/
 
 p {
-    margin: 16px 0 0 0;
+	margin: 16px 0 0 0;
 }
 
 img.landscape,
 img.portrait {
-    border: 2px outset #eee;
+	border: 2px outset #eee;
 }
 
 img.landscape.ipad-mini {
-    width: 566px;
-    height: 372px;
+	width: 566px;
+	height: 372px;
 }
 
 img.portrait.ipad-mini {
-    width: 372px;
-    height: 566px;
+	width: 372px;
+	height: 566px;
 }
 
 details {
-    margin: 16px 0 0 0;
-    border: 1px solid #888;
-    border-radius: 8px;
-    padding: 8px;
-    background-color: #ddd;
+	margin: 16px 0 0 0;
+	border: 1px solid #888;
+	border-radius: 8px;
+	padding: 8px;
+	background-color: #ddd;
 }
 
 details[open] {
-    background-color: #fff;
+	background-color: #fff;
 }
 
 summary {
-    font-size: 15px;
-    font-weight: bold;
+	font-size: 15px;
+	font-weight: bold;
 }
 
 /**** Text *******************************************************************/
 
-b {
-    font-weight: inherit;
-    font-style: inherit;
-}
-
-b::before {
-    display: inline-block;
-    content: " ";
-    width: 1em;
-    height: 1em;
-    margin-right: 2px;
-    background-size: contain;
-    vertical-align: middle;
-}
-
 u {
-    font-weight: normal;
-    font-style: normal;
-    text-decoration: underline double #f00;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: underline 1px #f00;
 }
 
 em {
-    font-weight: normal;
-    font-style: normal;
-    color: #f00;
+	font-weight: bold;
+	font-style: normal;
 }
 
 span.link {
-    color: #00f;
-    text-decoration: underline 1px #00f;
-    cursor: pointer;
+	color: #00f;
+	text-decoration: underline 1px #00f;
+	cursor: pointer;
 }
 
 span.gain {
-    color: #00f;
+	color: #00f;
 }
 
 span.lose {
-    color: #f00;
+	color: #f00;
 }

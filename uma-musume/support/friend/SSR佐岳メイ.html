@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+	<head>
+		<title>友人 SSR 佐岳メイ</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+		<link rel="stylesheet" href="../../../default.css?version=20240307a" />
+		<link rel="stylesheet" href="../../umamusume.css?version=20240307a" />
+		<link rel="stylesheet" href="../support.css?version=20240307a" />
+		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1><img class="friend" /> SSR 佐岳メイ</h1>
+
+			<nav>
+				<ol>
+					<li><a href="../../../">さとまるのメモ帳</a></li>
+					<li><a href="../../">ウマ娘</a></li>
+					<li><a href="../">サポート</a></li>
+					<li>友人 SSR 佐岳メイ</li>
+				</ol>
+			</nav>
+		</header>
+
+		<section id="event-options">
+			<h2>イベント選択肢</h2>
+
+			<details>
+				<summary>時には仕事を忘れて</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>確かに、コンディションは大切ですね！</th>
+							<td>
+								<ul>
+									<li><img class="guts" /> 根性 <span class="gain">+5 ～ +6</span></li>
+									<li>体力 <span class="gain">+15 ～ +27</span></li>
+									<li>やる気 <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+									<li class="recommendation"><span class="status">幸運体質</span>になる</li>
+									<li class="recommendation">お出かけができるようになる</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>どうせなら、栄養をしっかり摂りたいです</th>
+							<td>
+								<ul>
+									<li>体力 <span class="gain">+35 ～ +63</span></li>
+									<li>やる気 <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+10</span></li>
+									<li class="recommendation"><span class="status">幸運体質</span>になる</li>
+									<li class="recommendation">お出かけができるようになる</li>
+								</ul>
+								<hr />
+								<ul>
+									<li>体力 <span class="lose">-10</span></li>
+									<li>やる気 <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+									<li class="caution">お出かけができなくなる</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>やはり今は仕事を優先したいので……</th>
+							<td>
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+30 ～ +36</span></li>
+									<li><img class="intelligence" /> 賢さ <span class="gain">+30 ～ +36</span></li>
+									<li><span class="skill">一匹狼</span>スキルLv <span class="gain">+5</span></li>
+									<li class="caution">絆 <span class="lose">-5</span></li>
+									<li class="caution">お出かけができなくなる</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
+
+			<details>
+				<summary>縁がいずれ行きつくは</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>バッチリ任せてください！</th>
+							<td>
+								<ul>
+									<li><img class="guts" /> 根性 <span class="gain">+15 ～ +18</span></li>
+									<li>体力 <span class="gain">+35 ～ +63</span></li>
+									<li>やる気 <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+									<li class="recommendation"><span class="status">ポジティブ思考</span>になる</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>ダンスですか……！？</th>
+							<td>
+								<ul>
+									<li>
+										<img class="speed" />
+										<img class="stamina" />
+										<img class="power" />
+										<img class="guts" />
+										<img class="intelligence" />
+										5種ステータス <span class="gain">+6</span>
+									</li>
+									<li>やる気 <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+									<li class="recommendation"><span class="status">幸運体質</span>になる</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
+
+			<details>
+				<summary>サッカーしよう！</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>勢いよくシュートを決める！</th>
+							<td>
+								<ul>
+									<li><img class="guts" /> 根性 <span class="gain">+15 ～ +18</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>キレのあるドリブルで敵を抜く</th>
+							<td>
+								<ul>
+									<li><img class="power" /> パワー <span class="gain">+10 ～ +12</span></li>
+									<li>体力 <span class="gain">+7 ～ +10</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
+
+			<script src="../../skill.js"></script>
+		</section>
+	</body>
+</html>

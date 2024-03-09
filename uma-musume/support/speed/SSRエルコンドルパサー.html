@@ -1,209 +1,196 @@
 <!DOCTYPE html>
 
 <html lang="ja">
+	<head>
+		<title>スピード SSR エルコンドルパサー</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+		<link rel="stylesheet" href="../../../default.css?version=20240307a" />
+		<link rel="stylesheet" href="../../umamusume.css?version=20240307a" />
+		<link rel="stylesheet" href="../support.css?version=20240307a" />
+		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
+	</head>
 
-<head>
-	<title>スピード SSR エルコンドルパサー</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-	<link rel="stylesheet" href="../../../default.css?version=20240307a" />
-	<link rel="stylesheet" href="../../umamusume.css?version=20240307a" />
-	<link rel="stylesheet" href="../support.css?version=20240307a" />
-	<link rel="stylesheet" href="speed.css?version=20240307a" />
-	<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
-</head>
+	<body>
+		<header>
+			<h1><img class="speed" /> SSR エルコンドルパサー</h1>
 
-<body>
-	<header>
-		<h1><img class="support" /> SSR エルコンドルパサー</h1>
+			<nav>
+				<ol>
+					<li><a href="../../../">さとまるのメモ帳</a></li>
+					<li><a href="../../">ウマ娘</a></li>
+					<li><a href="../">サポート</a></li>
+					<li>スピード SSR エルコンドルパサー</li>
+				</ol>
+			</nav>
+		</header>
 
-		<nav>
-			<ol>
-				<li><a href="../../../">さとまるのメモ帳</a></li>
-				<li><a href="../../">ウマ娘</a></li>
-				<li><a href="../">サポート</a></li>
-				<li>スピード SSR エルコンドルパサー</li>
-			</ol>
-		</nav>
-	</header>
+		<section id="event-options">
+			<h2>イベント選択肢</h2>
 
-	<section id="event-options">
-		<h2>イベント選択肢</h2>
+			<details>
+				<summary>ボナペティ♪フランス料理！</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>新しい激辛メニューを開発するのはどう？</th>
+							<td>
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+15</span></li>
+									<li class="recommendation"><span class="skill">テンポアップ</span>ヒントLv <span class="gain">+3</span></li>
+									<li>絆 <span class="gain">+15</span></li>
+								</ul>
+								<hr />
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+5</span></li>
+									<li class="recommendation"><span class="skill">テンポアップ</span>ヒントLv <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>フランスの暮らしを勉強するのもいいかも</th>
+							<td>
+								<ul>
+									<li>体力 <span class="gain">+15</span></li>
+									<li>スキルPt <span class="gain">+15</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
 
-		<details>
-			<summary>ボナペティ♪フランス料理！</summary>
-			<table class="fit1">
-				<thead>
-					<tr>
-						<th>選択肢</th>
-						<th>効果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>新しい激辛メニューを開発するのはどう？</th>
-						<td>
-							<ul>
-								<li><b class="speed">スピード</b> <span class="gain">+15</span></li>
-								<li class="recommendation">
-									<span class="skill">テンポアップ</span>ヒントLv <span class="gain">+3</span>
-								</li>
-								<li>絆ゲージ <span class="gain">+15</span></li>
-							</ul>
-							<hr />
-							<ul>
-								<li><b class="speed">スピード</b> <span class="gain">+5</span></li>
-								<li class="recommendation">
-									<span class="skill">テンポアップ</span>ヒントLv <span class="gain">+1</span>
-								</li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>フランスの暮らしを勉強するのもいいかも</th>
-						<td>
-							<ul>
-								<li>体力 <span class="gain">+15</span></li>
-								<li>スキルPt <span class="gain">+15</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</details>
+			<details>
+				<summary>世界への飛翔</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>『凱旋門賞』の先を見てるなんて……</th>
+							<td>
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+20</span></li>
+									<li><img class="stamina" /> スタミナ <span class="gain">+20</span></li>
+									<li class="recommendation"><span class="skill">王手</span>ヒントLv <span class="gain">+3</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+								<hr />
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+10</span></li>
+									<li><img class="stamina" /> スタミナ <span class="gain">+5</span></li>
+									<li class="recommendation"><span class="skill">王手</span>ヒントLv <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>徹底した準備の大切さを実感した</th>
+							<td>
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+10</span></li>
+									<li><img class="stamina" /> スタミナ <span class="gain">+10</span></li>
+									<li class="recommendation">
+										<span class="skill">弧線のプロフェッサー</span>ヒントLv <span class="gain">+3</span>
+									</li>
+									<li>体力 <span class="gain">+10</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+								<hr />
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+5</span></li>
+									<li><img class="stamina" /> スタミナ <span class="gain">+5</span></li>
+									<li class="recommendation">
+										<span class="skill">弧線のプロフェッサー</span>ヒントLv <span class="gain">+1</span>
+									</li>
+									<li>体力 <span class="gain">+5</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
 
-		<details>
-			<summary>世界への飛翔</summary>
-			<table class="fit1">
-				<thead>
-					<tr>
-						<th>選択肢</th>
-						<th>効果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>『凱旋門賞』の先を見てるなんて……</th>
-						<td>
-							<ul>
-								<li><b class="speed">スピード</b> <span class="gain">+20</span></li>
-								<li><b class="stamina">スタミナ</b> <span class="gain">+20</span></li>
-								<li class="recommendation">
-									<span class="skill">王手</span>ヒントLv <span class="gain">+3</span>
-								</li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-							<hr />
-							<ul>
-								<li><b class="speed">スピード</b> <span class="gain">+10</span></li>
-								<li><b class="stamina">スタミナ</b> <span class="gain">+5</span></li>
-								<li class="recommendation">
-									<span class="skill">王手</span>ヒントLv <span class="gain">+1</span>
-								</li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>徹底した準備の大切さを実感した</th>
-						<td>
-							<ul>
-								<li><b class="speed">スピード</b> <span class="gain">+10</span></li>
-								<li><b class="stamina">スタミナ</b> <span class="gain">+10</span></li>
-								<li class="recommendation">
-									<span class="skill">弧線のプロフェッサー</span>ヒントLv <span class="gain">+3</span>
-								</li>
-								<li>体力 <span class="gain">+10</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-							<hr />
-							<ul>
-								<li><b class="speed">スピード</b> <span class="gain">+5</span></li>
-								<li><b class="stamina">スタミナ</b> <span class="gain">+5</span></li>
-								<li class="recommendation">
-									<span class="skill">弧線のプロフェッサー</span>ヒントLv <span class="gain">+1</span>
-								</li>
-								<li>体力 <span class="gain">+5</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</details>
+			<details>
+				<summary>シークレット・ノート！</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>エル流パワートレメニュー</th>
+							<td>
+								<ul>
+									<li><img class="power" /> パワー <span class="gain">+10</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>晴れたレースで走るコツ</th>
+							<td>
+								<ul>
+									<li class="recommendation"><span class="skill">晴れの日◯</span>ヒントLv <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
 
-		<details>
-			<summary>シークレット・ノート！</summary>
-			<table class="fit1">
-				<thead>
-					<tr>
-						<th>選択肢</th>
-						<th>効果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>エル流パワートレメニュー</th>
-						<td>
-							<ul>
-								<li><b class="power">パワー</b> <span class="gain">+10</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>晴れたレースで走るコツ</th>
-						<td>
-							<ul>
-								<li class="recommendation">
-									<span class="skill">晴れの日◯</span>ヒントLv <span class="gain">+1</span>
-								</li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</details>
+			<details>
+				<summary>メラメラ・ファイアー！</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>スタミナ定食を食べるのは？</th>
+							<td>
+								<ul>
+									<li><img class="stamina" /> スタミナ <span class="gain">+10</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>タイヤ引きで全力ダッシュは？</th>
+							<td>
+								<ul>
+									<li><img class="power" /> パワー <span class="gain">+20</span></li>
+									<li>体力 <span class="lose">-10</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
 
-		<details>
-			<summary>メラメラ・ファイアー！</summary>
-			<table class="fit1">
-				<thead>
-					<tr>
-						<th>選択肢</th>
-						<th>効果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>スタミナ定食を食べるのは？</th>
-						<td>
-							<ul>
-								<li><b class="stamina">スタミナ</b> <span class="gain">+10</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>タイヤ引きで全力ダッシュは？</th>
-						<td>
-							<ul>
-								<li><b class="power">パワー</b> <span class="gain">+20</span></li>
-								<li>体力 <span class="lose">-10</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</details>
-
-		<script src="../../skill.js"></script>
-	</section>
-</body>
-
+			<script src="../../skill.js"></script>
+		</section>
+	</body>
 </html>

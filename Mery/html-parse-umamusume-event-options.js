@@ -1,8 +1,16 @@
 #title="[HTML] ウマ娘イベント選択肢作成"
 
 var lineParser = /^(\t{0,2})([^\t\r\n]*)[\r\n]*$/;
-var propernounParser = /『(.+?)』/;
+var skillParser = /スキル『(.+?)』/;
+var statusParser = /ステータス『(.+?)』/;
+var speedParser = /^スピード/;
+var staminaParser = /^スタミナ/;
+var powerParser = /^パワー/;
+var gutsParser = /^根性/;
+var intelligenceParser = /^賢さ/;
 var gainParser = /\s*(\+\d+)$/;
+var gainParserRange = /\s*(\+\d+)~\+?(\d+)$/;
+var gainParserChoose = /\s*(\+\d+)\/\+?(\d+)$/;
 var loseParser = /\s*(-\d+)$/;
 var classParser = /^\{(.)\}\s*(.+)$/;
 
@@ -73,8 +81,17 @@ function writeEffect(context) {
 			"\t\t\t\t\t<ul>",
 		]);
 	} else {
-		var effect = context.text.replace(propernounParser, "<em>「$1」</em>");
+		var effect = context.text;
+		effect = effect.replace(skillParser, '<span class="skill">$1</span>');
+		effect = effect.replace(statusParser, '<span class="status">$1</span>');
+		effect = effect.replace(speedParser, '<img class="speed" /> スピード');
+		effect = effect.replace(staminaParser, '<img class="stamina" /> スタミナ');
+		effect = effect.replace(powerParser, '<img class="power" /> パワー');
+		effect = effect.replace(gutsParser, '<img class="guts" /> 根性');
+		effect = effect.replace(intelligenceParser, '<img class="intelligence" /> 賢さ');
 		effect = effect.replace(gainParser, ' <span class="gain">$1</span>');
+		effect = effect.replace(gainParserRange, ' <span class="gain">$1 ～ +$2</span>');
+		effect = effect.replace(gainParserChoose, ' <span class="gain">$1 / +$2</span>');
 		effect = effect.replace(loseParser, ' <span class="lose">$1</span>');
 
 		var tag = "";

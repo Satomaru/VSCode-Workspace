@@ -1,185 +1,176 @@
 <!DOCTYPE html>
 
 <html lang="ja">
+	<head>
+		<title>賢さ SSR ミホノブルボン</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+		<link rel="stylesheet" href="../../../default.css?version=20240307a" />
+		<link rel="stylesheet" href="../../umamusume.css?version=20240307a" />
+		<link rel="stylesheet" href="../support.css?version=20240307a" />
+		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
+	</head>
 
-<head>
-	<title>賢さ SSR ミホノブルボン</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-	<link rel="stylesheet" href="../../../default.css?version=20240307a" />
-	<link rel="stylesheet" href="../../umamusume.css?version=20240307a" />
-	<link rel="stylesheet" href="../support.css?version=20240307a" />
-	<link rel="stylesheet" href="intelligence.css?version=20240307a" />
-	<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
-</head>
+	<body>
+		<header>
+			<h1><img class="intelligence" /> SSR ミホノブルボン</h1>
 
-<body>
-	<header>
-		<h1><img class="support" /> SSR ミホノブルボン</h1>
+			<nav>
+				<ol>
+					<li><a href="../../../">さとまるのメモ帳</a></li>
+					<li><a href="../../">ウマ娘</a></li>
+					<li><a href="../">サポート</a></li>
+					<li>賢さ SSR ミホノブルボン</li>
+				</ol>
+			</nav>
+		</header>
 
-		<nav>
-			<ol>
-				<li><a href="../../../">さとまるのメモ帳</a></li>
-				<li><a href="../../">ウマ娘</a></li>
-				<li><a href="../">サポート</a></li>
-				<li>賢さ SSR ミホノブルボン</li>
-			</ol>
-		</nav>
-	</header>
+		<section id="event-options">
+			<h2>イベント選択肢</h2>
 
-	<section id="event-options">
-		<h2>イベント選択肢</h2>
+			<details>
+				<summary>ミッション『雷特訓』</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>地道に慣れていくしか……</th>
+							<td>
+								<ul>
+									<li><img class="intelligence" /> 賢さ <span class="gain">+10</span></li>
+									<li class="recommendation"><span class="skill">逃げのコツ◯</span>ヒントLv <span class="gain">+3</span></li>
+									<li>絆 <span class="gain">+10</span></li>
+								</ul>
+								<hr />
+								<ul>
+									<li><img class="intelligence" /> 賢さ <span class="gain">+5</span></li>
+									<li class="recommendation"><span class="skill">逃げのコツ◯</span>ヒントLv <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>尻尾を鍛えよう！</th>
+							<td>
+								<ul>
+									<li>体力 <span class="gain">+10</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
 
-		<details>
-			<summary>ミッション『雷特訓』</summary>
-			<table class="fit1">
-				<thead>
-					<tr>
-						<th>選択肢</th>
-						<th>効果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>地道に慣れていくしか……</th>
-						<td>
-							<ul>
-								<li><b class="intelligence">賢さ</b> <span class="gain">+10</span></li>
-								<li class="recommendation">
-									<span class="skill">逃げのコツ◯</span>ヒントLv <span class="gain">+3</span>
-								</li>
-								<li>絆ゲージ <span class="gain">+10</span></li>
-							</ul>
-							<hr />
-							<ul>
-								<li><b class="intelligence">賢さ</b> <span class="gain">+5</span></li>
-								<li class="recommendation">
-									<span class="skill">逃げのコツ◯</span>ヒントLv <span class="gain">+1</span>
-								</li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>尻尾を鍛えよう！</th>
-						<td>
-							<ul>
-								<li>体力 <span class="gain">+10</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</details>
+			<details>
+				<summary>ミッション『友を応援』</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>『雷特訓』を思い出して</th>
+							<td>
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+10</span></li>
+									<li><img class="power" /> パワー <span class="gain">+10</span></li>
+									<li><img class="intelligence" /> 賢さ <span class="gain">+10</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>応援の心強さは知っているだろ？</th>
+							<td>
+								<ul>
+									<li>体力 <span class="gain">+20</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
 
-		<details>
-			<summary>ミッション『友を応援』</summary>
-			<table class="fit1">
-				<thead>
-					<tr>
-						<th>選択肢</th>
-						<th>効果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>『雷特訓』を思い出して</th>
-						<td>
-							<ul>
-								<li><b class="speed">スピード</b> <span class="gain">+10</span></li>
-								<li><b class="power">パワー</b> <span class="gain">+10</span></li>
-								<li><b class="intelligence">賢さ</b> <span class="gain">+10</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>応援の心強さは知っているだろ？</th>
-						<td>
-							<ul>
-								<li>体力 <span class="gain">+20</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</details>
+			<details>
+				<summary>他人に危害を及ぼしてはならない</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>すごく重そうだ……</th>
+							<td>
+								<ul>
+									<li><img class="stamina" /> スタミナ <span class="gain">+5</span></li>
+									<li><img class="power" /> パワー <span class="gain">+15</span></li>
+									<li>体力 <span class="lose">-10</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>夜だと、音が少し響くかもな</th>
+							<td>
+								<ul>
+									<li><img class="intelligence" /> 賢さ <span class="gain">+5</span></li>
+									<li>体力 <span class="gain">+10</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
 
-		<details>
-			<summary>他人に危害を及ぼしてはならない</summary>
-			<table class="fit1">
-				<thead>
-					<tr>
-						<th>選択肢</th>
-						<th>効果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>すごく重そうだ……</th>
-						<td>
-							<ul>
-								<li><b class="stamina">スタミナ</b> <span class="gain">+5</span></li>
-								<li><b class="power">パワー</b> <span class="gain">+15</span></li>
-								<li>体力 <span class="lose">-10</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>夜だと、音が少し響くかもな</th>
-						<td>
-							<ul>
-								<li><b class="intelligence">賢さ</b> <span class="gain">+5</span></li>
-								<li>体力 <span class="gain">+10</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</details>
+			<details>
+				<summary>命令は守らなければならない</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>開店直前から待機しておこう</th>
+							<td>
+								<ul>
+									<li class="recommendation"><span class="skill">集中力</span>ヒントLv <span class="gain">+1</span></li>
+									<li>絆 +5</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>昼休みになったらダッシュ！</th>
+							<td>
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+10</span></li>
+									<li>スキルPt <span class="gain">+15</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
 
-		<details>
-			<summary>命令は守らなければならない</summary>
-			<table class="fit1">
-				<thead>
-					<tr>
-						<th>選択肢</th>
-						<th>効果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>開店直前から待機しておこう</th>
-						<td>
-							<ul>
-								<li class="recommendation">
-									<span class="skill">集中力</span>ヒントLv <span class="gain">+1</span>
-								</li>
-								<li>絆ゲージ +5</li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>昼休みになったらダッシュ！</th>
-						<td>
-							<ul>
-								<li><b class="speed">スピード</b> <span class="gain">+10</span></li>
-								<li>スキルPt <span class="gain">+15</span></li>
-								<li>絆ゲージ <span class="gain">+5</span></li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</details>
-
-		<script src="../../skill.js"></script>
-	</section>
-</body>
-
+			<script src="../../skill.js"></script>
+		</section>
+	</body>
 </html>
