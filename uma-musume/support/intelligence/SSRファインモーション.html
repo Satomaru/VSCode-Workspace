@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+	<head>
+		<title>賢さ SSR ファインモーション</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+		<link rel="stylesheet" href="../../../default.css?version=20240310a" />
+		<link rel="stylesheet" href="../../umamusume.css?version=20240310a" />
+		<link rel="stylesheet" href="../support.css?version=20240307a" />
+		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1><img class="intelligence" /> SSR ファインモーション</h1>
+
+			<nav>
+				<ol>
+					<li><a href="../../../">さとまるのメモ帳</a></li>
+					<li><a href="../../">ウマ娘</a></li>
+					<li><a href="../">サポート</a></li>
+					<li>賢さ SSR ファインモーション</li>
+				</ol>
+			</nav>
+		</header>
+
+		<section id="event-options">
+			<h2>イベント選択肢</h2>
+
+			<details>
+				<summary>素敵な♪練習日和</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>誰かと走ればもっと楽しくなる</th>
+							<td>
+								<ul>
+									<li><img class="intelligence" /> 賢さ <span class="gain">+5</span></li>
+									<li>スキルPt <span class="gain">+20</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>練習は真剣にすべき</th>
+							<td>
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+10</span></li>
+									<li><img class="stamina" /> スタミナ <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>楽しく練習するのは大切</th>
+							<td>
+								<ul>
+									<li>絆 <span class="gain">+5</span></li>
+									<li class="recommendation"><span class="status">練習上手◯</span>になる</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
+
+			<details>
+				<summary>ときめきシューズ</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>軽くて速く走れそうなシューズ</th>
+							<td>
+								<ul>
+									<li><img class="speed" /> スピード <span class="gain">+5</span></li>
+									<li>スキルPt <span class="gain">+10</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>重いけど鍛えられそうなシューズ</th>
+							<td>
+								<ul>
+									<li><img class="stamina" /> スタミナ <span class="gain">+5</span></li>
+									<li>体力 <span class="lose">-10</span></li>
+									<li>スキルPt <span class="gain">+20</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
+
+			<details>
+				<summary>思い出クローバー</summary>
+				<table class="fit1">
+					<thead>
+						<tr>
+							<th>選択肢</th>
+							<th>効果</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>最終コーナー</th>
+							<td>
+								<ul>
+									<li class="recommendation"><span class="skill">コーナー巧者◯</span>ヒントLv <span class="gain">+1</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>ラストの直線</th>
+							<td>
+								<ul>
+									<li><img class="guts" /> 根性 <span class="gain">+15</span></li>
+									<li>絆 <span class="gain">+5</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</details>
+
+			<script src="../../skill.js?version=20240310a"></script>
+		</section>
+	</body>
+</html>
