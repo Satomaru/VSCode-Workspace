@@ -7,16 +7,15 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-	<link rel="stylesheet" href="../../../default.css?version=20240307a" />
-	<link rel="stylesheet" href="../../umamusume.css?version=20240307a" />
+	<link rel="stylesheet" href="../../../default.css?version=20240310a" />
+	<link rel="stylesheet" href="../../umamusume.css?version=20240310a" />
 	<link rel="stylesheet" href="../training.css?version=20240307a" />
-	<link rel="stylesheet" href="mile.css?version=20240307a" />
 	<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
 </head>
 
 <body>
 	<header>
-		<h1><img class="distance" /> <img class="front" /> オグリキャップ</h1>
+		<h1><img class="mile" /> <img class="front" /> オグリキャップ</h1>
 
 		<nav>
 			<ol>
@@ -184,7 +183,7 @@
 					<td>
 						<ul>
 							<li>マイルCSと安田記念に勝利する</li>
-							<li>短距離レースに勝利する</li>
+							<li><img class="sprint" /> 短距離レースに勝利する</li>
 						</ul>
 					</td>
 				</tr>
@@ -217,16 +216,16 @@
 						<th>思いっきり戦ってこい！</th>
 						<td>
 							<ul>
+								<li><img class="power" /> パワー <span class="gain">+10</span></li>
 								<li>体力 <span class="gain">+30</span></li>
-								<li>パワー <span class="gain">+10</span></li>
 								<li>スキルPt <span class="gain">+10</span></li>
 							</ul>
 							<hr>
 							<ul>
+								<li class="caution"><img class="speed" /> スピード <span class="lose">-5</span></li>
+								<li><img class="power" /> パワー <span class="gain">+5</span></li>
 								<li>体力 <span class="gain">+30</span></li>
 								<li>スキルPt <span class="gain">+10</span></li>
-								<li class="caution">スピード <span class="lose">-5</span></li>
-								<li>パワー <span class="gain">+5</span></li>
 								<li class="caution"><span class="status">太り気味</span>になる</li>
 							</ul>
 						</td>
@@ -235,8 +234,8 @@
 						<th>ほどほどにセーブしてほしい</th>
 						<td>
 							<ul>
+								<li><img class="power" /> パワー <span class="gain">+5</span></li>
 								<li>体力 <span class="gain">+10</span></li>
-								<li>パワー <span class="gain">+5</span></li>
 								<li>スキルPt <span class="gain">+5</span></li>
 							</ul>
 						</td>
@@ -245,17 +244,17 @@
 						<th>食って食って……全てを食い尽くせ！</th>
 						<td>
 							<ul>
+								<li><img class="power" /> パワー <span class="gain">+20</span></li>
 								<li><span class="skill">笠松の食いしん坊</span>の進化条件で、有馬記念の勝利が不要になる</li>
 								<li>体力 <span class="gain">+100</span></li>
-								<li>パワー <span class="gain">+20</span></li>
 								<li>スキルPt <span class="gain">+20</span></li>
 							</ul>
 							<hr>
 							<ul>
+								<li class="caution"><img class="speed" /> スピード <span class="lose">-20</span></li>
+								<li><img class="power" /> パワー <span class="gain">+20</span></li>
 								<li><span class="skill">笠松の食いしん坊</span>の進化条件で、有馬記念の勝利が不要になる</li>
 								<li>体力 <span class="gain">+100</span></li>
-								<li class="caution">スピード <span class="lose">-20</span></li>
-								<li>パワー <span class="gain">+20</span></li>
 								<li>スキルPt <span class="gain">+20</span></li>
 								<li class="caution"><span class="status">太り気味</span>になる</li>
 							</ul>
@@ -279,7 +278,7 @@
 						<th>雑草を抜いてしまおう</th>
 						<td>
 							<ul>
-								<li>根性 <span class="gain">+10</span></li>
+								<li><img class="guts" /> 根性 <span class="gain">+10</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -287,7 +286,7 @@
 						<th>畑を耕そう</th>
 						<td>
 							<ul>
-								<li>パワー <span class="gain">+10</span></li>
+								<li><img class="power" /> パワー <span class="gain">+10</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -354,10 +353,10 @@
 							</ul>
 							<hr>
 							<ul>
+								<li class="caution"><img class="speed" /> スピード <span class="lose">-5</span></li>
+								<li><img class="power" /> パワー <span class="gain">+5</span></li>
 								<li>体力 <span class="gain">+30</span></li>
 								<li>スキルPt <span class="gain">+10</span></li>
-								<li class="caution">スピード <span class="lose">-5</span></li>
-								<li>パワー <span class="gain">+5</span></li>
 								<li class="caution"><span class="status">太り気味</em>になる</li>
 							</ul>
 						</td>
@@ -380,7 +379,7 @@
 						<th>くまなく探そう</th>
 						<td>
 							<ul>
-								<li>根性 <span class="gain">+10</span></li>
+								<li><img class="guts" /> 根性 <span class="gain">+10</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -388,7 +387,7 @@
 						<th>物産展に行ってみよう</th>
 						<td>
 							<ul>
-								<li>スピード <span class="gain">+10</span></li>
+								<li><img class="speed" /> スピード <span class="gain">+10</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -410,8 +409,8 @@
 						<th>その覚悟、受け取った！</th>
 						<td>
 							<ul>
-								<li>体力 <span class="lose">-5</span></li>
 								<li>対象ステータス <span class="gain">+5</span></li>
+								<li>体力 <span class="lose">-5</span></li>
 								<li>特定NPCの絆ゲージ <span class="gain">+5</span></li>
 							</ul>
 						</td>
@@ -442,7 +441,7 @@
 						<th>力強いステップがよかった</th>
 						<td>
 							<ul>
-								<li>パワー <span class="gain">+10</span></li>
+								<li><img class="power" /> パワー <span class="gain">+10</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -450,7 +449,7 @@
 						<th>流れるような動きがよかった</th>
 						<td>
 							<ul>
-								<li>スピード <span class="gain">+10</span></li>
+								<li><img class="speed" /> スピード <span class="gain">+10</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -472,7 +471,7 @@
 						<th>ジムで鍛えよう！</th>
 						<td>
 							<ul>
-								<li>パワー <span class="gain">+25</span></li>
+								<li><img class="power" /> パワー <span class="gain">+25</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -518,7 +517,14 @@
 						<th>最強を目指して『怪物になる！』</th>
 						<td>
 							<ul>
-								<li>5種ステータス <span class="gain">+8</span></li>
+								<li>
+									<img class="speed" />
+									<img class="stamina" />
+									<img class="power" />
+									<img class="guts" />
+									<img class="intelligence" />
+									5種ステータス <span class="gain">+8</span>
+								</li>
 							</ul>
 						</td>
 					</tr>
@@ -548,7 +554,7 @@
 						<th>さらにパワーをつけよう！</th>
 						<td>
 							<ul>
-								<li>パワー <span class="gain">+10</span></li>
+								<li><img class="power" /> パワー <span class="gain">+10</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -556,7 +562,7 @@
 						<th>気持ちで負けないようにしよう！</th>
 						<td>
 							<ul>
-								<li>根性 <span class="gain">+10</span></li>
+								<li><img class="guts" /> 根性 <span class="gain">+10</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -578,8 +584,8 @@
 						<th>でもちゃんと休もう<br>きっちり休ませる</th>
 						<td>
 							<ul>
-								<li class="caution">やる気 <span class="lose">-1</span></li>
 								<li class="caution">対象ステータス <span class="lose">-5</span></li>
+								<li class="caution">やる気 <span class="lose">-1</span></li>
 								<li class="caution"><span class="status">練習下手</span>になる (ランダム)</li>
 							</ul>
 						</td>
@@ -588,9 +594,8 @@
 						<th>本当に？<br>頑張らせる</th>
 						<td>
 							<ul>
+								<li class="caution">対象ステータス <span class="lose">-10</span></li>
 								<li class="caution">やる気 <span class="lose">-1</span></li>
-								<li class="caution">対象ステータス <span class="lose">-10</span>
-								</li>
 								<li class="caution"><span class="status">練習下手</span>になる (ランダム)</li>
 							</ul>
 							<hr>
@@ -617,12 +622,10 @@
 						<th>まずは焦らずゆっくり休もう<br>とにかく労わる</th>
 						<td>
 							<ul>
+								<li class="caution">対象ステータス <span class="lose">-10</span></li>
+								<li class="caution">2種ステータス <span class="lose">-10</span>	</li>
 								<li>体力 <span class="gain">+10</span></li>
 								<li class="caution">やる気 <span class="lose">-3</span></li>
-								<li class="caution">対象ステータス <span class="lose">-10</span>
-								</li>
-								<li class="caution">2種ステータス <span class="lose">-10</span>
-								</li>
 								<li class="caution"><span class="status">練習下手</span>になる (ランダム)</li>
 							</ul>
 						</td>
@@ -631,11 +634,9 @@
 						<th>なら、すぐに治してまた走ろう！<br>厳しくいく！</th>
 						<td>
 							<ul>
+								<li class="caution">対象ステータス <span class="lose">-10</span></li>
+								<li class="caution">2種ステータス <span class="lose">-10</span></li>
 								<li class="caution">やる気 <span class="lose">-3</span></li>
-								<li class="caution">対象ステータス <span class="lose">-10</span>
-								</li>
-								<li class="caution">2種ステータス <span class="lose">-10</span>
-								</li>
 								<li class="caution"><span class="status">練習下手</span>になる</li>
 							</ul>
 							<hr>
@@ -663,7 +664,7 @@
 						<th>本物が1番だ</th>
 						<td>
 							<ul>
-								<li>根性 <span class="gain">+20</span></li>
+								<li><img class="guts" /> 根性 <span class="gain">+20</span></li>
 								<li class="recommendation"><span class="status">注目株</span>になる (ランダム)</li>
 							</ul>
 						</td>
@@ -672,7 +673,7 @@
 						<th>ぬいぐるみは応援の形だ</th>
 						<td>
 							<ul>
-								<li>スタミナ <span class="gain">+20</span></li>
+								<li><img class="stamina" /> スタミナ <span class="gain">+20</span></li>
 								<li class="recommendation"><span class="status">注目株</span>になる (ランダム)</li>
 							</ul>
 						</td>
@@ -695,7 +696,7 @@
 						<th>いつも助けられてるよ</th>
 						<td>
 							<ul>
-								<li>スピード <span class="gain">+20</span></li>
+								<li><img class="speed" /> スピード <span class="gain">+20</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -703,7 +704,7 @@
 						<th>これからも頼りにしてる</th>
 						<td>
 							<ul>
-								<li>パワー <span class="gain">+20</span></li>
+								<li><img class="power" /> パワー <span class="gain">+20</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -725,8 +726,8 @@
 						<th>俺の想いも一緒だ！</th>
 						<td>
 							<ul>
-								<li>スタミナ <span class="gain">+10</span></li>
-								<li>パワー <span class="gain">+10</span></li>
+								<li><img class="stamina" /> スタミナ <span class="gain">+10</span></li>
+								<li><img class="power" /> パワー <span class="gain">+10</span></li>
 							</ul>
 						</td>
 					</tr>
@@ -734,7 +735,7 @@
 						<th>みんなと一緒に勝とう！</th>
 						<td>
 							<ul>
-								<li>賢さ <span class="gain">+20</span></li>
+								<li><img class="intelligence" /> 賢さ <span class="gain">+20</span></li>
 							</ul>
 						</td>
 					</tr>

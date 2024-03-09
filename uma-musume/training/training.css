@@ -1,35 +1,19 @@
-img.lead {
-    content: url("../images/lead.svg");
-}
-
-img.front {
-    content: url("../images/front.svg");
-}
-
-img.looker {
-    content: url("../images/looker.svg");
-}
-
-img.closer {
-    content: url("../images/closer.svg");
-}
-
 #race-schedule table {
-    width: 100%;
+	width: 100%;
 }
 
 #race-schedule tbody th {
-    text-align: right;
+	text-align: right;
 }
 
 #advance-skill table {
-    width: 800px;
+	width: 800px;
 }
 
 #event-options table {
-    width: 100%;
+	width: 100%;
 }
 
 #event-options tbody th {
-    text-align: left;
+	text-align: left;
 }

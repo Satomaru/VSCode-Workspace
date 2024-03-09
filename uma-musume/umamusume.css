@@ -28,6 +28,42 @@ img.group {
 	content: url("images/group.png");
 }
 
+img.sprint {
+	content: url("images/sprint.png");
+}
+
+img.mile {
+	content: url("images/mile.png");
+}
+
+img.classic {
+	content: url("images/classic.png");
+}
+
+img.long {
+	content: url("images/long.png");
+}
+
+img.dirt {
+	content: url("images/dirt.png");
+}
+
+img.lead {
+	content: url("images/lead.svg");
+}
+
+img.front {
+	content: url("images/front.svg");
+}
+
+img.looker {
+	content: url("images/looker.svg");
+}
+
+img.closer {
+	content: url("images/closer.svg");
+}
+
 /**** Status *****************************************************************/
 
 .status::before {
