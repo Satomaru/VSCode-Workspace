@@ -1,0 +1,16 @@
+{
+	"editor.formatOnSave": true,
+
+	"files.eol": "\r\n",
+	"files.insertFinalNewline": true,
+
+	"html.format.extraLiners": "",
+	"html.format.indentInnerHtml": true,
+	"html.format.maxPreserveNewLines": 1,
+	"html.format.preserveNewLines": true,
+	"html.format.wrapLineLength": 128,
+
+	"prettier.printWidth": 128,
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true
+}
