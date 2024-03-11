@@ -2,33 +2,49 @@
 
 <html lang="ja">
 	<head>
-		<title>育成</title>
+		<title>ウマ娘 育成</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-		<link rel="stylesheet" href="../../default.css?version=20240310b" />
+		<link rel="stylesheet" href="../../default.css?version=20240311a" />
 		<link rel="stylesheet" href="../uma-musume.css?version=20240310a" />
 		<link rel="stylesheet" href="training.css?version=20240307a" />
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/exis9/squery@latest/squery.min.js"></script>
 	</head>
 
 	<body>
+		<nav class="navbar navbar-expand-sm bg-dark bg-gradient fixed-top" data-bs-theme="dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="../../../">さとまるのメモ帳</a>
+
+				<div class="collapse navbar-collapse">
+					<ul class="navbar-nav">
+						<li class="nav-item dropdown active">
+							<a class="nav-link dropdown-toggle active" aria-current="page" href="#" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false">ウマ娘</a>
+
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item active" aria-current="true" href="#">育成</a></li>
+								<li><a class="dropdown-item" href="../support/">サポート</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
 		<header>
-			<h1>育成</h1>
-			<nav>
-				<ol>
-					<li><a href="../../">さとまるのメモ帳</a></li>
-					<li><a href="../">ウマ娘</a></li>
-					<li>育成</li>
-				</ol>
-			</nav>
+			<h1>ウマ娘 育成</h1>
 		</header>
 
 		<section>
 			<h2><img src="../images/mile.png" />マイル</h2>
 			<menu>
-				<li><img class="looker" /> <a href="mile/差しヴィブロス.html">ヴィブロス</a></li>
-				<li><img class="front" /> <a href="mile/先行オグリキャップ.html">オグリキャップ</a></li>
-				<li><img class="looker" /> <a href="mile/差しダイイチルビー.html">ダイイチルビー</a></li>
+				<li><a href="mile/ヴィブロス.html">ヴィブロス (差し)</a></li>
+				<li><a href="mile/オグリキャップ.html">オグリキャップ (先行)</a></li>
+				<li><a href="mile/ダイイチルビー.html">ダイイチルビー (差し)</a></li>
 			</menu>
 		</section>
 	</body>
