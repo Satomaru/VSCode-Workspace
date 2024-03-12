@@ -17,3 +17,7 @@
 #event-options tbody th {
 	text-align: left;
 }
+
+#training-plan table {
+	width: 800px;
+}

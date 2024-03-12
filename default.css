@@ -131,7 +131,7 @@ tbody th {
 	text-align: left;
 }
 
-table.fit1 tr > :first-child {
+table.fit1 tr > :nth-child(1) {
 	white-space: nowrap;
 	width: 1em;
 }
@@ -139,6 +139,10 @@ table.fit1 tr > :first-child {
 table.fit2 tr > :nth-child(2) {
 	white-space: nowrap;
 	width: 1em;
+}
+
+table.fix1 tr > :nth-child(1) {
+	width: 20%;
 }
 
 /**** List *******************************************************************/
@@ -223,17 +227,18 @@ summary {
 u {
 	font-weight: normal;
 	font-style: normal;
-	text-decoration: underline 1px #f00;
+	text-decoration: underline 2px #f44;
 }
 
-em {
-	font-weight: bold;
+mark {
+	font-weight: normal;
 	font-style: normal;
+	background: linear-gradient(transparent 25%, #ff0 25%, #ff0 75%, transparent 75%);
 }
 
 span.link {
 	color: #00f;
-	text-decoration: underline 1px #00f;
+	text-decoration: underline #00f;
 	cursor: pointer;
 }
 
