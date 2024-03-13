@@ -23,8 +23,11 @@ const skillData = {
 
 	電光石火: { rank: 3, type: "sprint-mile" },
 	常に最たる輝きを: { rank: 4, type: "sprint-mile" },
+	ヴェール揺らす春疾風: { rank: 3, type: "sprint-mile" },
 	気合十分: { rank: 3, type: "mile" },
 	天来のリトルシスター: { rank: 4, type: "mile-classic" },
+	豪風円刃: { rank: 4, type: "mile" },
+	祝福のフラワーガール: { rank: 5, type: "mile" },
 	テンポアップ: { rank: 4, type: "classic" },
 	型破り: { rank: 4, type: "classic-long" },
 	ロックオン: { rank: 3, type: "long" },
