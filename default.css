@@ -31,6 +31,12 @@ nav.fixed-top.navbar .dropdown-menu {
 	--bs-dropdown-link-active-bg: #777;
 }
 
+.navbar-brand .logo {
+	width: 1em;
+	height: 1em;
+	content: url(icon-192x192.png);
+}
+
 /**** Header *****************************************************************/
 
 header {
