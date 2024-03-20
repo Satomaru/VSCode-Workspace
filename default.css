@@ -160,6 +160,19 @@ menu {
 	font-size: 18px;
 }
 
+menu h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+menu h3 + ul {
+	margin-left: 16px;
+}
+
 ul {
 	margin: 0;
 	padding: 0;
